@@ -35,20 +35,20 @@ function App() {
     <BrowserRouter>
       <NavBar setAuthenticated={setAuthenticated} />
       <Switch>
-        <Route path="/workouts" exact={true}>
-          <div className="test">
+        <Route path="/workouts:userId" exact={true}>
+          <div className="homepage-layout">
             <NavLog />
             <Workouts />
           </div>
         </Route>
         <Route path="/diary">
-          <div className="test">
+          <div className="homepage-layout">
             <NavLog />
             <Diary />
           </div>
         </Route>
         <Route path="/foodtracker">
-          <div className="test">
+          <div className="homepage-layout">
             <NavLog />
             <FoodTracker />
           </div>

@@ -10,6 +10,9 @@ class User(db.Model, UserMixin):
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
 
+  workouts = db.relationship('Workout', foreign_keys='Workout.userId')
+  mealEntry = db.relationship('MealEntry', foreign_keys='MealEntry.userId')
+
 
   @property
   def password(self):

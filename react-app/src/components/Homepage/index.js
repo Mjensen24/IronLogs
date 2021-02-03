@@ -10,7 +10,7 @@ const HomePage = () => {
         <div className="homepage-container">
             <NavLog />
             <Switch>
-                <Route path="/workouts" exact={true}>
+                <Route path="/workouts:id" exact={true}>
                     <Workouts />
                 </Route>
                 <Route path="/diary">
@@ -20,9 +20,9 @@ const HomePage = () => {
                     <FoodTracker />
                 </Route>
             </Switch >
-            <div className="navlog-container">
+            {/* <div className="navlog-container">
                 <h1>test</h1>
-            </div>
+            </div> */}
         </div >
     )
 }
