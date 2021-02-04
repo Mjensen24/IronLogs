@@ -11,6 +11,7 @@ class User(db.Model, UserMixin):
   hashed_password = db.Column(db.String(255), nullable = False)
 
   workouts = db.relationship('Workout', foreign_keys='Workout.userId')
+  exercises = db.relationship('Exercise', foreign_keys='Exercise.userId')
   mealEntry = db.relationship('MealEntry', foreign_keys='MealEntry.userId')
 
 

@@ -3,20 +3,20 @@ from app.models import db, Exercise
 # Adds a demo user, you can add other users here if you want
 def seed_exercises():
 
-    demo = Exercise(workoutId="1", title="Chest Press", reps="10", sets="3", notes="I really like this exercise")
+    demo = Exercise(workoutId="1", userId="1", title="Chest Press", reps="10", sets="3", weight="100", notes="I really like this exercise")
     db.session.add(demo)
-    demo2 = Exercise(workoutId="1", title="Dumbbell Press ", reps="15", sets="4", notes="This one kind of hurt my shoulder")
+    demo2 = Exercise(workoutId="1", userId="1", title="Dumbbell Press ", reps="15", sets="4", weight="100", notes="This one kind of hurt my shoulder")
     db.session.add(demo2)
-    demo3 = Exercise(workoutId="1", title="Push ups ", reps="20", sets="5", notes="Burnt out by the 3rd set")
+    demo3 = Exercise(workoutId="1", userId="1", title="Push ups ", reps="20", sets="5", weight="100", notes="Burnt out by the 3rd set")
     db.session.add(demo3)
 
-    test = Exercise(workoutId="2", title="Squats", reps="10", sets="3", notes="God I hate squats so much")
+    test = Exercise(workoutId="2", userId="1", title="Squats", reps="10", sets="3", weight="100", notes="God I hate squats so much")
     db.session.add(test)
-    test2 = Exercise(workoutId="2", title="Leg press", reps="10", sets="4", notes="I'm not even going to bothe talking about this")
+    test2 = Exercise(workoutId="2", userId="1", title="Leg press", reps="10", sets="4", weight="100", notes="I'm not even going to bothe talking about this")
     db.session.add(test2)
-    test3 = Exercise(workoutId="2", title="Leg extensions", reps="20", sets="5", notes="Buuuuuuuuuuuuuurn")
+    test3 = Exercise(workoutId="2", userId="1", title="Leg extensions", reps="20", sets="5", weight="100", notes="Buuuuuuuuuuuuuurn")
     db.session.add(test3)
-    test4 = Exercise(workoutId="2", title="Deadlifts", reps="5", sets="5", notes="How am I this strong?")
+    test4 = Exercise(workoutId="2", userId="1", title="Deadlifts", reps="5", sets="5", weight="100", notes="How am I this strong?")
     db.session.add(test4)
 
 

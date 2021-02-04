@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: b4a515d292a0
+Revision ID: 563c4a430118
 Revises: 
-Create Date: 2021-02-02 17:32:22.042261
+Create Date: 2021-02-04 16:07:35.043735
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'b4a515d292a0'
+revision = '563c4a430118'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -53,17 +53,21 @@ def upgrade():
     )
     op.create_table('exercises',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('workoutId', sa.Integer(), nullable=False),
     sa.Column('title', sa.Text(), nullable=False),
     sa.Column('reps', sa.Integer(), nullable=False),
     sa.Column('sets', sa.Integer(), nullable=False),
+    sa.Column('weight', sa.Integer(), nullable=False),
     sa.Column('notes', sa.Text(), nullable=True),
+    sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.ForeignKeyConstraint(['workoutId'], ['workouts.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('meals',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('mealEntryId', sa.Integer(), nullable=False),
+    sa.Column('title', sa.Text(), nullable=False),
     sa.Column('calories', sa.Integer(), nullable=True),
     sa.Column('fat', sa.Integer(), nullable=True),
     sa.Column('carbs', sa.Integer(), nullable=True),

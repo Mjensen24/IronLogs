@@ -8,7 +8,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import Workouts from './components/Workouts/index'
 import User from "./components/User";
-import { authenticate, get_userId } from "./services/auth";
+import { authenticate } from "./services/auth";
 import NavLog from "./components/NavLog";
 import Diary from "./components/Diary";
 import FoodTracker from "./components/FoodTracker";
@@ -17,14 +17,6 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [userInfo, setUserInfo] = useState([])
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const user = await get_userId();
-  //     setUserInfo(user)
-  //     console.log(user)
-  //   })();
-  // }, []);
 
   useEffect(() => {
     (async () => {

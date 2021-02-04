@@ -13,7 +13,7 @@ const Workouts = ({ userId }) => {
             setWorkouts(responseData.workouts);
         }
         fetchData();
-    }, []);
+    }, [userId]);
 
     useEffect(() => {
         async function fetchData() {
