@@ -1,17 +1,15 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, NavLink } from "react-router-dom";
 import "./index.css"
 
-const NavLog = () => {
-
-
+const NavLog = (userId) => {
 
     return (
         <div className="navlog-container">
             <nav className="navlog-main">
                 <ul className="navlog-ul">
                     <li className="navlog-li">
-                        <NavLink to="/workouts:userId" exact={true} activeClassName="navlog-active">
+                        <NavLink to={`/workouts/:${userId.userId}`} exact={true} activeClassName="navlog-active">
                             Workouts
                         </NavLink>
                     </li>

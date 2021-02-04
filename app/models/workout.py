@@ -10,3 +10,12 @@ class Workout(db.Model):
 
     user = db.relationship('User', foreign_keys=userId)
     # exercises = db.relationship('Exercise', foreign_keys='Excercise.workoutId')
+
+
+    def to_dict(self):
+        return {
+        "id": self.id,
+        "userId": self.userId,
+        "title": self.title,
+        "date": self.date
+        }

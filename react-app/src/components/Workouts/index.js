@@ -1,26 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import "./index.css"
 
-const Workouts = () => {
+const Workouts = (userId) => {
+    const [workouts, setWorkouts] = useState([]);
 
-    const data = [
-        { 'title': "chest day", "date": "10/24/2020" },
-        { 'title': "leg day", "date": "10/24/2010" },
-        { 'title': "back day", "date": "10/24/2000" },
-        { 'title': "arm day", "date": "10/24/2009" },
-        { 'title': "neck day", "date": "10/24/2080" },
-    ];
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch(`/api/workouts/${userId.userId}`);
+            const responseData = await response.json();
+            setWorkouts(responseData.workouts);
+        }
+        fetchData();
+    }, []);
 
+    console.log('workouts', userId)
 
     return (
         <div className="workouts-container">
             <h1>Workouts</h1>
             <div className="workout-entry_container">
 
-                {data.map((entry) => {
+                {workouts.map((entry) => {
                     return (
                         <>
-                            <div className="workout-entry">
+                            <div key={entry.userId} className="workout-entry">
                                 <p>{entry.date}</p>
                                 <p>{entry.title}</p>
                             </div>

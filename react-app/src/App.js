@@ -17,11 +17,13 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
+  const [userInfo, setUserInfo] = useState([])
   useEffect(() => {
     (async () => {
       const user = await authenticate();
       if (!user.errors) {
         setAuthenticated(true);
+        setUserInfo(user)
       }
       setLoaded(true);
     })();
@@ -31,25 +33,27 @@ function App() {
     return null;
   }
 
+  const userId = userInfo.id
+
   return (
     <BrowserRouter>
       <NavBar setAuthenticated={setAuthenticated} />
       <Switch>
-        <Route path="/workouts:userId" exact={true}>
+        <ProtectedRoute path={`/workouts/:${userId}`} exact={true} authenticated={authenticated}>
           <div className="homepage-layout">
-            <NavLog />
-            <Workouts />
+            <NavLog userId={userId} />
+            <Workouts userId={userId} />
           </div>
-        </Route>
+        </ProtectedRoute>
         <Route path="/diary">
           <div className="homepage-layout">
-            <NavLog />
+            <NavLog userId={userId} />
             <Diary />
           </div>
         </Route>
         <Route path="/foodtracker">
           <div className="homepage-layout">
-            <NavLog />
+            <NavLog userId={userId} />
             <FoodTracker />
           </div>
         </Route>
