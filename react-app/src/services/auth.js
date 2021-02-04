@@ -1,8 +1,14 @@
-export const authenticate = async() => {
-  const response = await fetch('/api/auth/',{
+export const authenticate = async () => {
+  const response = await fetch('/api/auth/', {
     headers: {
       'Content-Type': 'application/json'
     }
+  });
+  return await response.json();
+}
+
+export const get_userId = async () => {
+  const response = await fetch('/api/auth/', {
   });
   return await response.json();
 }

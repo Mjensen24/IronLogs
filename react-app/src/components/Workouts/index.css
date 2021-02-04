@@ -25,3 +25,19 @@
     padding-right: 5px;
     margin: 0;
 }
+
+.excercise-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.exercise-data {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
+}
+
+.exercise-data p {
+    margin-right: 25px;
+}

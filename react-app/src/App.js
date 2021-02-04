@@ -8,7 +8,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import Workouts from './components/Workouts/index'
 import User from "./components/User";
-import { authenticate } from "./services/auth";
+import { authenticate, get_userId } from "./services/auth";
 import NavLog from "./components/NavLog";
 import Diary from "./components/Diary";
 import FoodTracker from "./components/FoodTracker";
@@ -16,14 +16,22 @@ import FoodTracker from "./components/FoodTracker";
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
-
   const [userInfo, setUserInfo] = useState([])
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const user = await get_userId();
+  //     setUserInfo(user)
+  //     console.log(user)
+  //   })();
+  // }, []);
+
   useEffect(() => {
     (async () => {
       const user = await authenticate();
       if (!user.errors) {
-        setAuthenticated(true);
         setUserInfo(user)
+        setAuthenticated(true);
       }
       setLoaded(true);
     })();
@@ -33,18 +41,19 @@ function App() {
     return null;
   }
 
+
   const userId = userInfo.id
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      <NavBar userId={userId} setAuthenticated={setAuthenticated} />
       <Switch>
-        <ProtectedRoute path={`/workouts/:${userId}`} exact={true} authenticated={authenticated}>
+        <Route path={`/workouts/:${userId}`} exact={true} authenticated={authenticated}>
           <div className="homepage-layout">
             <NavLog userId={userId} />
             <Workouts userId={userId} />
           </div>
-        </ProtectedRoute>
+        </Route>
         <Route path="/diary">
           <div className="homepage-layout">
             <NavLog userId={userId} />

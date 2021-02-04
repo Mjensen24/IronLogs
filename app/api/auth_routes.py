@@ -27,10 +27,10 @@ def authenticate():
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}, 401
 
-# @auth_routes.route('/')
-# def get_userId();
-#     user = current_user.to_dict()
-#     return { user }
+@auth_routes.route('/')
+def get_userId():
+    user = current_user.to_dict()
+    return { user }
 
 
 @auth_routes.route('/login', methods=['POST'])
