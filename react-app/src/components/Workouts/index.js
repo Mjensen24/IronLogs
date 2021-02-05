@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, AddIcon, Stack, FormLabel, Input, InputGroup, InputLeftAddon, InputRightAddon, Select, Textarea, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import "./index.css"
 import WorkoutForm from "../auth/WorkoutForm";
+import ExerciseForm from "../auth/ExerciseForm";
 
 
 const Workouts = ({ userId }) => {
@@ -64,8 +65,12 @@ const Workouts = ({ userId }) => {
         )
     }
 
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const btnRef = React.useRef()
+    const firstField = React.useRef()
+
     return (
-        <div className="workouts-container">
+        <div className="mainpage-container">
             <h1>Workouts</h1>
             <div className="workout-entry_container">
                 {DrawerExample()}
@@ -100,6 +105,19 @@ const Workouts = ({ userId }) => {
                                                 null
                                             )
                                         })}
+                                        <Accordion allowMultiple>
+                                            <AccordionItem>
+                                                <AccordionButton>
+                                                    <Box flex="1" textAlign="left">
+                                                        Add Exercise
+                                                    </Box>
+                                                    <AccordionIcon />
+                                                </AccordionButton>
+                                                <AccordionPanel pb={4}>
+                                                    <ExerciseForm userId={userId} />
+                                                </AccordionPanel>
+                                            </AccordionItem>
+                                        </Accordion>
                                     </AccordionPanel>
                                 </AccordionItem>
                             </Accordion>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
 import { get_userId, postWorkout } from "../../services/auth";
 
 const WorkoutForm = ({ userId }) => {
@@ -50,8 +49,8 @@ const WorkoutForm = ({ userId }) => {
                     value={date}
                     onChange={updateDate}
                 />
-                <button type="submit">Submit</button>
             </div>
+            <button type="submit">Submit</button>
         </form>
     )
 }

@@ -74,6 +74,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+          <NavLog />
           <HomePage />
         </ProtectedRoute>
       </Switch>

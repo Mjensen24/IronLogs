@@ -66,3 +66,22 @@ export const postWorkout = async (userId, title, date) => {
   });
   return await response.json();
 }
+
+export const postExercise = async (userId, workoutId, title, reps, sets, weight, notes) => {
+  const response = await fetch("/api/workouts/createexercise", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+      workoutId,
+      title,
+      reps,
+      sets,
+      weight,
+      notes,
+    }),
+  });
+  return await response.json();
+}
