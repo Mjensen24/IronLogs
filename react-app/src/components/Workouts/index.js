@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, AddIcon, Stack, FormLabel, Input, InputGroup, InputLeftAddon, InputRightAddon, Select, Textarea, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import "./index.css"
+import WorkoutForm from "../auth/WorkoutForm";
+
 
 const Workouts = ({ userId }) => {
     const [workouts, setWorkouts] = useState([]);
@@ -17,67 +19,85 @@ const Workouts = ({ userId }) => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`/api/workouts/test`);
+            const response = await fetch(`/api/workouts/exercises/${userId}`);
             const responseData = await response.json();
             setExercises(responseData.exercises);
         }
         fetchData();
-    }, []);
+    }, [userId]);
 
-    console.log(exercises)
+    function DrawerExample() {
+        const { isOpen, onOpen, onClose } = useDisclosure()
+        const btnRef = React.useRef()
 
-    const data = [
-        {
-            "workoutId": 1,
-            "title": "Chest press",
-            "reps": 10,
-            "sets": 3,
-            "notes": "I felt tired by the end of this exercise but could keep going Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        {
-            "workoutId": 1,
-            "title": "Leg press",
-            "reps": 10,
-            "sets": 3,
-            "notes": "This is totally a test please dont look at any of what i'm writing please."
-        },
-        {
-            "workoutId": 1,
-            "title": "Shoulder press",
-            "reps": 10,
-            "sets": 3,
-            "notes": "Chicken noodle soup!!."
-        }
-    ]
+        return (
+            <>
+                <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+                    Create Workout
+                </Button>
+                <Drawer
+                    isOpen={isOpen}
+                    placement="right"
+                    onClose={onClose}
+                    finalFocusRef={btnRef}
+                >
+                    <DrawerOverlay>
+                        <DrawerContent>
+                            <DrawerCloseButton />
+                            <DrawerHeader>Create your account</DrawerHeader>
+
+                            <DrawerBody>
+                                <WorkoutForm userId={userId} />
+                                {/* <Input placeholder="Type here..." /> */}
+                            </DrawerBody>
+
+                            <DrawerFooter>
+                                <Button variant="outline" mr={3} onClick={onClose}>
+                                    Cancel
+                                </Button>
+                                <Button color="blue">Save</Button>
+                            </DrawerFooter>
+                        </DrawerContent>
+                    </DrawerOverlay>
+                </Drawer>
+            </>
+        )
+    }
 
     return (
         <div className="workouts-container">
             <h1>Workouts</h1>
             <div className="workout-entry_container">
-
-                {workouts.map((entry) => {
+                {DrawerExample()}
+                {workouts.map((workout) => {
                     return (
                         <>
                             <Accordion allowToggle>
                                 <AccordionItem>
                                     <AccordionButton>
                                         <Box flex="1" textAlign="left">
-                                            <p>{entry.date}</p>
-                                            <p>{entry.title}</p>
+                                            <p>{workout.date}</p>
+                                            <p>{workout.title}</p>
                                         </Box>
                                         <AccordionIcon />
                                     </AccordionButton>
                                     <AccordionPanel pb={4}>
-                                        {data.map((exercise) => {
-                                            return (
-                                                <div className="excercise-container">
-                                                    <div className="exercise-data">
-                                                        <p>Exercise: {exercise.title}</p>
-                                                        <p>Reps: {exercise.reps}</p>
-                                                        <p>Sets: {exercise.sets}</p>
+                                        {exercises.map((exercise) => {
+                                            if (exercise.workoutId === workout.id) {
+                                                return (
+                                                    <div className="excercise-container">
+                                                        <div className="exercise-data">
+                                                            <p>Exercise: {exercise.title}</p>
+                                                            <p>Weight: {exercise.weight}</p>
+                                                            <p>Reps: {exercise.reps}</p>
+                                                            <p>Sets: {exercise.sets}</p>
+                                                        </div>
+                                                        <p>Notes: {exercise.notes}</p>
                                                     </div>
-                                                    <p>Notes: {exercise.notes}</p>
-                                                </div>
+                                                )
+                                            }
+                                            return (
+                                                null
                                             )
                                         })}
                                     </AccordionPanel>

@@ -51,3 +51,18 @@ export const signUp = async (username, email, password) => {
   });
   return await response.json();
 }
+
+export const postWorkout = async (userId, title, date) => {
+  const response = await fetch("/api/workouts/createworkout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+      title,
+      date,
+    }),
+  });
+  return await response.json();
+}
