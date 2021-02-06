@@ -29,6 +29,11 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     return <Redirect to="/" />;
   }
 
+  const demoLogin = () => {
+    setEmail("demo@aa.io")
+    setPassword("password")
+  }
+
   return (
     <form onSubmit={onLogin}>
       <div>
@@ -56,6 +61,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           onChange={updatePassword}
         />
         <button type="submit">Login</button>
+        <button onClick={demoLogin} type="submit">Demo</button>
       </div>
     </form>
   );

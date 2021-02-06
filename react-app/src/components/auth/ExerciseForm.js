@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { get_userId, postExercise } from "../../services/auth";
 
-const ExerciseForm = ({ userId }) => {
+const ExerciseForm = ({ userId, workoutId }) => {
     const [userInfo, setUserInfo] = useState([])
     const [title, setTitle] = useState("");
     const [reps, setReps] = useState("");
@@ -21,7 +21,7 @@ const ExerciseForm = ({ userId }) => {
 
     const onExercise = async (e) => {
         e.preventDefault();
-        const exercise = await postExercise(userInfo.id, userInfo.id, title, reps, sets, weight, notes)
+        await postExercise(userId, workoutId, title, reps, sets, weight, notes)
     }
 
     const updateTitle = (e) => {

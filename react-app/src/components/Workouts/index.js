@@ -33,7 +33,7 @@ const Workouts = ({ userId }) => {
 
         return (
             <>
-                <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+                <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
                     Create Workout
                 </Button>
                 <Drawer
@@ -72,14 +72,14 @@ const Workouts = ({ userId }) => {
     return (
         <div className="mainpage-container">
             <h1>Workouts</h1>
-            <div className="workout-entry_container">
+            <div className="workouts_container">
                 {DrawerExample()}
                 {workouts.map((workout) => {
                     return (
                         <>
                             <Accordion allowToggle>
-                                <AccordionItem>
-                                    <AccordionButton>
+                                <AccordionItem className="indiviual-workout_container">
+                                    <AccordionButton className="indiviual-workout_header">
                                         <Box flex="1" textAlign="left">
                                             <p>{workout.date}</p>
                                             <p>{workout.title}</p>
@@ -114,7 +114,7 @@ const Workouts = ({ userId }) => {
                                                     <AccordionIcon />
                                                 </AccordionButton>
                                                 <AccordionPanel pb={4}>
-                                                    <ExerciseForm userId={userId} />
+                                                    <ExerciseForm workoutId={workout.id} userId={userId} />
                                                 </AccordionPanel>
                                             </AccordionItem>
                                         </Accordion>

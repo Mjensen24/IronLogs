@@ -10,3 +10,12 @@ class DiaryEntry(db.Model):
     date = db.Column(db.DateTime(timezone=True), server_default=db.func.now())
 
     user = db.relationship('User', foreign_keys=userId)
+
+    def to_dict(self):
+        return {
+        "id": self.id,
+        "userId": self.userId,
+        "title": self.title,
+        "notes": self.notes,
+        "date": self.date
+        }
