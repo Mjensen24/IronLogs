@@ -9,3 +9,11 @@ class MealEntry(db.Model):
 
     user = db.relationship('User', foreign_keys=userId)
     meals = db.relationship('Meal', foreign_keys='Meal.mealEntryId')
+
+
+    def to_dict(self):
+        return {
+        "id": self.id,
+        "userId": self.userId,
+        "date": self.date
+        }

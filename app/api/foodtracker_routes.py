@@ -14,5 +14,5 @@ def mealEntries():
 @foodtracker_routes.route('/<int:id>')
 @login_required
 def mealEntries_for_user(id):
-    mealEntries = MealEntry.query.filter(MealEntry.userId==id).all()
-    return {"mealEntries": [mealEntry.to_dict() for mealEntry in mealEntries]}
+    entries = MealEntry.query.filter(MealEntry.userId==id).all()
+    return {"entries": [entry.to_dict() for entry in entries]}
