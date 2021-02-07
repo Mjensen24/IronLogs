@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Workout, User, Exercise, DiaryEntry, db
+from app.forms import DiaryForm
 
 diaryentry_routes = Blueprint('diaryentries', __name__)
 
@@ -12,7 +13,7 @@ def diaryentries_for_user(id):
 
 @diaryentry_routes.route('/createentry', methods=['POST'])
 def entryForm():
-    form = EntryForm()
+    form = DiaryForm()
     entry = DiaryEntry(
         userId=current_user.id,
         title=form.data['title'],

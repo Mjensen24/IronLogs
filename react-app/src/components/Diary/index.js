@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Input, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import "./index.css"
+import DiaryForm from '../auth/DiaryForm';
 
 const Diary = ({ userId }) => {
     const [entries, setEntries] = useState([]);
@@ -35,8 +36,8 @@ const Diary = ({ userId }) => {
                             <DrawerHeader>Create your account</DrawerHeader>
 
                             <DrawerBody>
-                                {/* <WorkoutForm userId={userId} /> */}
-                                <Input placeholder="Type here..." />
+                                <DiaryForm userId={userId} />
+                                {/* <Input placeholder="Type here..." /> */}
                             </DrawerBody>
 
                             <DrawerFooter>
