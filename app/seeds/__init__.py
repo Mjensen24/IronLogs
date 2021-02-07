@@ -3,6 +3,7 @@ from .users import seed_users, undo_users
 from .workouts import seed_workouts, undo_workouts
 from .exercises import seed_exercises, undo_exercises
 from .diaryEntries import seed_diaryEntries, undo_diaryEntries
+from .mealEntries import seed_mealEntries, undo_mealEntries
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -15,6 +16,7 @@ def seed():
     seed_workouts()
     seed_exercises()
     seed_diaryEntries()
+    seed_mealEntries()
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
@@ -24,4 +26,5 @@ def undo():
     undo_workouts()
     undo_exercises()
     undo_diaryEntries()
+    undo_mealEntries()
     # Add other undo functions here

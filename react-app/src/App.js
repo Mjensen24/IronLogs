@@ -55,7 +55,7 @@ function App() {
         <Route path={`/foodtracker/:${userId}`}>
           <div className="homepage-layout">
             <NavLog userId={userId} />
-            <FoodTracker />
+            <FoodTracker userId={userId} />
           </div>
         </Route>
         <Route path="/login" exact={true}>
