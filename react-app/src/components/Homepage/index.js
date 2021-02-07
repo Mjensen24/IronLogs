@@ -8,6 +8,7 @@ import NavLog from '../NavLog';
 const HomePage = () => {
     return (
         <div className="mainpage-container">
+            <NavLog />
             <h1>homepage</h1>
         </div>
     )

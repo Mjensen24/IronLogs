@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, AddIcon, Stack, FormLabel, Input, InputGroup, InputLeftAddon, InputRightAddon, Select, Textarea, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import "./index.css"
 import WorkoutForm from "../auth/WorkoutForm";
 import ExerciseForm from "../auth/ExerciseForm";
@@ -73,7 +73,7 @@ const Workouts = ({ userId }) => {
         <div className="mainpage-container">
             <h1>Workouts</h1>
             <div className="workouts_container">
-                {DrawerExample()}
+                {/* {DrawerExample()} */}
                 {workouts.map((workout) => {
                     return (
                         <>
@@ -124,6 +124,7 @@ const Workouts = ({ userId }) => {
                         </>
                     )
                 })}
+                {DrawerExample()}
             </div>
         </div >
     )

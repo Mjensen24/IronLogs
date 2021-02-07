@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import "./index.css"
 
-const NavLog = (userId) => {
+const NavLog = ({ userId }) => {
 
     return (
         <div className="navlog-container">
@@ -10,21 +10,21 @@ const NavLog = (userId) => {
                 <ul className="navlog-ul">
                     <div>
                         <li className="navlog-li">
-                            <NavLink to={`/workouts/${userId.userId}`} exact={true} activeClassName="navlog-active">
+                            <NavLink to={`/workouts/${userId}`} exact={true} activeClassName="navlog-active">
                                 Workouts
                             </NavLink>
                         </li>
                     </div>
                     <div>
                         <li className="navlog-li">
-                            <NavLink to="/diary" exact={true} activeClassName="navlog-active">
+                            <NavLink to={`/diary/${userId}`} exact={true} activeClassName="navlog-active">
                                 Diary
                             </NavLink>
                         </li>
                     </div>
                     <div>
                         <li className="navlog-li">
-                            <NavLink to="/foodtracker" exact={true} activeClassName="navlog-active">
+                            <NavLink to={`/foodtracker/${userId}`} exact={true} activeClassName="navlog-active">
                                 Food Tracker
                             </NavLink>
                         </li>

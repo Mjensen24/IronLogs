@@ -38,12 +38,11 @@ def workoutForm():
 @workout_routes.route('/createexercise', methods=['POST'])
 def exerciseForm():
     data = request.json
-    print("REQUEST", data)
     form = ExerciseForm()
-    print('HELOOOOOOO', form.data)
+    print("REQUEST", data)
     exercise = Exercise(
         userId=current_user.id,
-        workoutId=data.workoutId,
+        workoutId=data["workoutId"],
         title=form.data['title'],
         reps=form.data['reps'],
         sets=form.data['sets'],

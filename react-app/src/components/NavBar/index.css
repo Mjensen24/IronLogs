@@ -10,7 +10,7 @@
 
 .navbar-content {
     width: 1000px;
-    margin-left: 190px;
+    margin-left: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,20 +21,42 @@ nav {
     flex-direction: row;
 }
 
+img {
+    height: 35px;
+    width: 170px;
+}
+
 ul {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 li {
+    display: flex;
+    justify-content: center;
     list-style: none;
 }
+
 
 .navbar-element {
     margin-left: 5px;
     margin-right: 5px;
 }
 
+.navbar-element > button:hover {
+    font-weight: 600;
+    padding-bottom: 1px;
+}
+
+.navbar-element:hover {
+    font-weight: 600;
+    padding-bottom: 1px;
+}
+
 .navbar-element a {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { get_userId, postExercise } from "../../services/auth";
+import React, { useState } from "react";
+import { postExercise } from "../../services/auth";
 
 const ExerciseForm = ({ userId, workoutId }) => {
-    const [userInfo, setUserInfo] = useState([])
+    // const [userInfo, setUserInfo] = useState([])
     const [title, setTitle] = useState("");
     const [reps, setReps] = useState("");
     const [sets, setSets] = useState("");
@@ -11,12 +11,12 @@ const ExerciseForm = ({ userId, workoutId }) => {
 
 
 
-    useEffect(() => {
-        (async () => {
-            const user = await get_userId();
-            setUserInfo(user)
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //         const user = await get_userId();
+    //         setUserInfo(user)
+    //     })();
+    // }, []);
 
 
     const onExercise = async (e) => {

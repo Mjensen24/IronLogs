@@ -46,13 +46,13 @@ function App() {
             <Workouts userId={userId} />
           </div>
         </Route>
-        <Route path="/diary">
+        <Route path={`/diary/:${userId}`}>
           <div className="homepage-layout">
             <NavLog userId={userId} />
-            <Diary />
+            <Diary userId={userId} />
           </div>
         </Route>
-        <Route path="/foodtracker">
+        <Route path={`/foodtracker/:${userId}`}>
           <div className="homepage-layout">
             <NavLog userId={userId} />
             <FoodTracker />
