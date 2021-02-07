@@ -85,3 +85,19 @@ export const postExercise = async (userId, workoutId, title, reps, sets, weight,
   });
   return await response.json();
 }
+
+export const postEntry = async (userId, title, notes, date) => {
+  const response = await fetch("/api/diaryentries/createentry", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+      title,
+      notes,
+      date,
+    }),
+  });
+  return await response.json();
+}
