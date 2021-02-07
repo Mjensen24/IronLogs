@@ -17,7 +17,7 @@ const WorkoutForm = ({ userId }) => {
 
     const onWorkout = async (e) => {
         e.preventDefault();
-        const workout = await postWorkout(userInfo.id, title, date)
+        await postWorkout(userInfo.id, title, date)
     }
 
     const updateTitle = (e) => {

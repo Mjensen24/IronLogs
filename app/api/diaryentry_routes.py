@@ -9,3 +9,16 @@ diaryentry_routes = Blueprint('diaryentries', __name__)
 def diaryentries_for_user(id):
     entries = DiaryEntry.query.filter(DiaryEntry.userId==id).all()
     return {"entries": [entry.to_dict() for entry in entries]}
+
+@diaryentry_routes.route('/createentry', methods=['POST'])
+def entryForm():
+    form = EntryForm()
+    entry = DiaryEntry(
+        userId=current_user.id,
+        title=form.data['title'],
+        notes=form.data['notes'],
+        date=form.data['date']
+    )
+    db.session.add(entry)
+    db.session.commit()
+    return entry.to_dict()
