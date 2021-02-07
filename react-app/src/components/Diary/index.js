@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Input, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
-import "./index.css"
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import DiaryForm from '../auth/DiaryForm';
+import "./index.css"
 
 const Diary = ({ userId }) => {
     const [entries, setEntries] = useState([]);
@@ -22,7 +22,7 @@ const Diary = ({ userId }) => {
         return (
             <>
                 <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                    Create Entry
+                    +
                 </Button>
                 <Drawer
                     isOpen={isOpen}

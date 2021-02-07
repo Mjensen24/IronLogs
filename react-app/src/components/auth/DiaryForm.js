@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { postEntry } from "../../services/auth";
 
 const DiaryForm = ({ userId }) => {

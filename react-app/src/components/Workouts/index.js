@@ -34,7 +34,7 @@ const Workouts = ({ userId }) => {
         return (
             <>
                 <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                    Create Workout
+                    +
                 </Button>
                 <Drawer
                     isOpen={isOpen}
@@ -65,9 +65,9 @@ const Workouts = ({ userId }) => {
         )
     }
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef()
-    const firstField = React.useRef()
+    // const { isOpen, onOpen, onClose } = useDisclosure()
+    // const btnRef = React.useRef()
+    // const firstField = React.useRef()
 
     return (
         <>
