@@ -70,63 +70,67 @@ const Workouts = ({ userId }) => {
     const firstField = React.useRef()
 
     return (
-        <div className="mainpage-container">
-            <h1>Workouts</h1>
-            <div className="workouts_container">
-                {/* {DrawerExample()} */}
-                {workouts.map((workout) => {
-                    return (
-                        <>
-                            <Accordion allowToggle>
-                                <AccordionItem className="indiviual-workout_container">
-                                    <AccordionButton className="indiviual-workout_header">
-                                        <Box flex="1" textAlign="left">
-                                            <p>{workout.date}</p>
-                                            <p>{workout.title}</p>
-                                        </Box>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                    <AccordionPanel pb={4}>
-                                        {exercises.map((exercise) => {
-                                            if (exercise.workoutId === workout.id) {
-                                                return (
-                                                    <div className="excercise-container">
-                                                        <div className="exercise-data">
-                                                            <p>Exercise: {exercise.title}</p>
-                                                            <p>Weight: {exercise.weight}</p>
-                                                            <p>Reps: {exercise.reps}</p>
-                                                            <p>Sets: {exercise.sets}</p>
+        <>
+            <div className="mainpage-container">
+                <h1>Workouts</h1>
+                <div className="workouts_container">
+                    {/* {DrawerExample()} */}
+                    {workouts.map((workout) => {
+                        return (
+                            <>
+                                <Accordion allowToggle>
+                                    <AccordionItem className="indiviual-workout_container">
+                                        <AccordionButton className="indiviual-workout_header">
+                                            <Box flex="1" textAlign="left">
+                                                <p>{workout.date}</p>
+                                                <p>{workout.title}</p>
+                                            </Box>
+                                            <AccordionIcon />
+                                        </AccordionButton>
+                                        <AccordionPanel pb={4}>
+                                            {exercises.map((exercise) => {
+                                                if (exercise.workoutId === workout.id) {
+                                                    return (
+                                                        <div className="excercise-container">
+                                                            <div className="exercise-data">
+                                                                <p>Exercise: {exercise.title}</p>
+                                                                <p>Weight: {exercise.weight}</p>
+                                                                <p>Reps: {exercise.reps}</p>
+                                                                <p>Sets: {exercise.sets}</p>
+                                                            </div>
+                                                            <p>Notes: {exercise.notes}</p>
                                                         </div>
-                                                        <p>Notes: {exercise.notes}</p>
-                                                    </div>
+                                                    )
+                                                }
+                                                return (
+                                                    null
                                                 )
-                                            }
-                                            return (
-                                                null
-                                            )
-                                        })}
-                                        <Accordion allowMultiple>
-                                            <AccordionItem>
-                                                <AccordionButton>
-                                                    <Box flex="1" textAlign="left">
-                                                        Add Exercise
-                                                    </Box>
-                                                    <AccordionIcon />
-                                                </AccordionButton>
-                                                <AccordionPanel pb={4}>
-                                                    <ExerciseForm workoutId={workout.id} userId={userId} />
-                                                </AccordionPanel>
-                                            </AccordionItem>
-                                        </Accordion>
-                                    </AccordionPanel>
-                                </AccordionItem>
-                            </Accordion>
-                        </>
-                    )
-                })}
+                                            })}
+                                            <Accordion allowMultiple>
+                                                <AccordionItem>
+                                                    <AccordionButton>
+                                                        <Box flex="1" textAlign="left">
+                                                            Add Exercise
+                                                        </Box>
+                                                        <AccordionIcon />
+                                                    </AccordionButton>
+                                                    <AccordionPanel pb={4}>
+                                                        <ExerciseForm workoutId={workout.id} userId={userId} />
+                                                    </AccordionPanel>
+                                                </AccordionItem>
+                                            </Accordion>
+                                        </AccordionPanel>
+                                    </AccordionItem>
+                                </Accordion>
+                            </>
+                        )
+                    })}
+                </div>
+            </div >
+            <div className="post-button">
                 {DrawerExample()}
             </div>
-        </div >
+        </>
     )
 }
 

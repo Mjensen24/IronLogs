@@ -22,3 +22,14 @@
     font-size: 25px;
     padding-bottom: 8px;
 }
+
+.post-button {
+    margin-top: 100px;
+    width: 150px;
+    height: 70px;
+    /* background-color: red; */
+}
+
+.post-button > button {
+
+}

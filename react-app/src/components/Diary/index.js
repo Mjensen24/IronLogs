@@ -53,33 +53,37 @@ const Diary = ({ userId }) => {
     }
 
     return (
-        <div className="mainpage-container">
-            <h1>Diary</h1>
-            <div className="entries_container">
-                {/* {DrawerExample()} */}
-                {entries.map((entry) => {
-                    return (
-                        <Accordion allowToggle>
-                            <AccordionItem>
-                                <h2>
-                                    <AccordionButton>
-                                        <Box flex="1" textAlign="left">
-                                            <p>{entry.date}</p>
-                                            <p>{entry.title}</p>
-                                        </Box>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                </h2>
-                                <AccordionPanel pb={4}>
-                                    <p>{entry.notes}</p>
-                                </AccordionPanel>
-                            </AccordionItem>
-                        </Accordion>
-                    )
-                })}
+        <>
+            <div className="mainpage-container">
+                <h1>Diary</h1>
+                <div className="entries_container">
+                    {/* {DrawerExample()} */}
+                    {entries.map((entry) => {
+                        return (
+                            <Accordion allowToggle>
+                                <AccordionItem>
+                                    <h2>
+                                        <AccordionButton>
+                                            <Box flex="1" textAlign="left">
+                                                <p>{entry.date}</p>
+                                                <p>{entry.title}</p>
+                                            </Box>
+                                            <AccordionIcon />
+                                        </AccordionButton>
+                                    </h2>
+                                    <AccordionPanel pb={4}>
+                                        <p>{entry.notes}</p>
+                                    </AccordionPanel>
+                                </AccordionItem>
+                            </Accordion>
+                        )
+                    })}
+                </div>
+            </div>
+            <div className="post-button">
                 {DrawerExample()}
             </div>
-        </div>
+        </>
     )
 }
 
