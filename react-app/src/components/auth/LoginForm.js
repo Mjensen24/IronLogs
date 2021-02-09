@@ -38,38 +38,47 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     <div className="login-container">
       <div className="form-container">
         <div className="form-info">
-          <form onSubmit={onLogin}>
-            <div>
-              {errors.map((error) => (
-                <div>{error}</div>
-              ))}
-            </div>
-            <div>
-              <label htmlFor="email">Email</label>
-              <input
-                name="email"
-                type="text"
-                placeholder="Email"
-                value={email}
-                onChange={updateEmail}
-              />
-            </div>
-            <div>
-              <label htmlFor="password">Password</label>
-              <input
-                name="password"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={updatePassword}
-              />
-            </div>
-          </form>
-          <button type="submit">Login</button>
-          <button onClick={demoLogin} type="submit">Demo</button>
+          <div className="form-inner">
+            <form onSubmit={onLogin}>
+              <div>
+                {errors.map((error) => (
+                  <div>{error}</div>
+                ))}
+              </div>
+              <div>
+                <label htmlFor="email"></label>
+                <input
+                  className="login-input"
+                  name="email"
+                  type="text"
+                  placeholder="Email"
+                  value={email}
+                  onChange={updateEmail}
+                />
+              </div>
+              <div>
+                <label htmlFor="password"></label>
+                <input
+                  className="login-input"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={updatePassword}
+                />
+              </div>
+              <div className="form-buttons">
+                <button type="submit">Login</button>
+                <button onClick={demoLogin} type="submit">Demo</button>
+              </div>
+            </form>
+          </div>
+          <div className="form-footer">
+            <p>Dont have an account? Sign up</p>
+          </div>
         </div>
         <div className="form-photo">
-          <img src="/images/gym.jpeg" alt="IronLogs"></img>
+          <img src="/images/loginlogo.png" alt="IronLogs"></img>
         </div>
       </div>
     </div>

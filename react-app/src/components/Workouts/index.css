@@ -65,11 +65,26 @@
     align-items: center;
     width: 400px;
     height: 400px;
-    background-color: lightblue;
+    background-color: rgb(226, 226, 226);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-left: 2px solid #2c7a7b;
+    border-top: 2px solid #2c7a7b;
+    border-bottom: 2px solid #2c7a7b;
+}
+
+.form-inner {
+    margin-top: 80px;
+}
+
+.login-input {
+    width: 210px;
+    margin-top: 15px;
+    border-radius: 5px;
 }
 
 .form-photo {
-    width: 60%;
+    width: 50%;
     height: 100%;
     /* background-color: green; */
 }
@@ -77,4 +92,9 @@
 .form-photo img {
     height: 80%;
     width: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* border-right: 2px solid rgb(168, 168, 168);
+    border-top: 2px solid rgb(168, 168, 168);
+    border-bottom: 2px solid rgb(168, 168, 168); */
 }
