@@ -116,3 +116,22 @@ export const postMealEntry = async (userId, title, date) => {
   });
   return await response.json();
 }
+
+export const postMeal = async (userId, mealEntryId, title, calories, fat, carbs, water) => {
+  const response = await fetch("/api/foodtracker/createmeal", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+      mealEntryId,
+      title,
+      calories,
+      fat,
+      carbs,
+      water,
+    }),
+  });
+  return await response.json();
+}

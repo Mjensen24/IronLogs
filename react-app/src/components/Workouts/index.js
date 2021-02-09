@@ -65,16 +65,11 @@ const Workouts = ({ userId }) => {
         )
     }
 
-    // const { isOpen, onOpen, onClose } = useDisclosure()
-    // const btnRef = React.useRef()
-    // const firstField = React.useRef()
-
     return (
         <>
             <div className="mainpage-container">
                 <h1>Workouts</h1>
                 <div className="workouts_container">
-                    {/* {DrawerExample()} */}
                     {workouts.map((workout) => {
                         return (
                             <>

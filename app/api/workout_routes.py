@@ -37,10 +37,10 @@ def workoutForm():
     return workout.to_dict()
 
 @workout_routes.route('/createexercise', methods=['POST'])
+@login_required
 def exerciseForm():
     data = request.json
     form = ExerciseForm()
-    print("REQUEST", data)
     exercise = Exercise(
         userId=current_user.id,
         workoutId=data["workoutId"],

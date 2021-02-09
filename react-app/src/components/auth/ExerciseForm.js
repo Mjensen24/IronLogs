@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { postExercise } from "../../services/auth";
 
 const ExerciseForm = ({ userId, workoutId }) => {
-    // const [userInfo, setUserInfo] = useState([])
     const [title, setTitle] = useState("");
     const [reps, setReps] = useState("");
     const [sets, setSets] = useState("");

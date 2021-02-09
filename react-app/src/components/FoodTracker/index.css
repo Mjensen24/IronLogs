@@ -5,3 +5,17 @@
     width: 650px;
     padding-top: 10px;
 }
+
+.meal-container {
+
+}
+
+.meal-data{
+    display: flex;
+    flex-direction: row;
+}
+
+.meal-data_entry {
+    margin-left: 12px;
+    width: 100px;
+}
