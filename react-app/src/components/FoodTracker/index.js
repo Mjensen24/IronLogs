@@ -65,6 +65,7 @@ const FoodTracker = ({ userId }) => {
                                         <AccordionButton>
                                             <Box flex="1" textAlign="left">
                                                 <p>{entry.date}</p>
+                                                <p>{entry.title}</p>
                                             </Box>
                                             <AccordionIcon />
                                         </AccordionButton>

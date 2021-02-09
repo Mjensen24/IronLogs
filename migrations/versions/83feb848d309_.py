@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 563c4a430118
+Revision ID: 83feb848d309
 Revises: 
-Create Date: 2021-02-04 16:07:35.043735
+Create Date: 2021-02-07 20:43:57.250490
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '563c4a430118'
+revision = '83feb848d309'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -39,6 +39,7 @@ def upgrade():
     op.create_table('mealEntries',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
+    sa.Column('title', sa.Text(), nullable=True),
     sa.Column('date', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -66,6 +67,7 @@ def upgrade():
     )
     op.create_table('meals',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('mealEntryId', sa.Integer(), nullable=False),
     sa.Column('title', sa.Text(), nullable=False),
     sa.Column('calories', sa.Integer(), nullable=True),
@@ -73,6 +75,7 @@ def upgrade():
     sa.Column('carbs', sa.Integer(), nullable=True),
     sa.Column('water', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['mealEntryId'], ['mealEntries.id'], ),
+    sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

@@ -3,22 +3,22 @@ from app.models import db, MealEntry
 # Adds a demo user, you can add other users here if you want
 def seed_mealEntries():
 
-    demo = MealEntry(userId="1")
+    demo = MealEntry(userId="1", title="Hello World")
     db.session.add(demo)
 
-    demo2 = MealEntry(userId="1")
+    demo2 = MealEntry(userId="1", title="Hello World")
     db.session.add(demo2)
 
-    demo3 = MealEntry(userId="1")
+    demo3 = MealEntry(userId="1", title="Hello World")
     db.session.add(demo3)
 
-    demo4 = MealEntry(userId="1")
+    demo4 = MealEntry(userId="1", title="Hello World")
     db.session.add(demo4)
 
-    demo5 = MealEntry(userId="1")
+    demo5 = MealEntry(userId="1", title="Hello World")
     db.session.add(demo5)
 
-    demo6 = MealEntry(userId="1")
+    demo6 = MealEntry(userId="1", title="Hello World")
     db.session.add(demo6)
 
 

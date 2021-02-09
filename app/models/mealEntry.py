@@ -5,6 +5,7 @@ class MealEntry(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    title = db.Column(db.Text, nullable=True)
     date = db.Column(db.DateTime(timezone=True), server_default=db.func.now())
 
     user = db.relationship('User', foreign_keys=userId)
@@ -15,5 +16,6 @@ class MealEntry(db.Model):
         return {
         "id": self.id,
         "userId": self.userId,
+        "title": self.title,
         "date": self.date
         }
