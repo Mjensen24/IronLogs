@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, Input, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
+import MealEntryForm from "../auth/MealEntryForm"
 import "./index.css"
 
 const FoodTracker = ({ userId }) => {
@@ -35,8 +36,7 @@ const FoodTracker = ({ userId }) => {
                             <DrawerHeader>Create your account</DrawerHeader>
 
                             <DrawerBody>
-                                {/* <WorkoutForm userId={userId} /> */}
-                                <Input placeholder="Type here..." />
+                                <MealEntryForm userId={userId} />
                             </DrawerBody>
 
                             <DrawerFooter>

@@ -24,6 +24,7 @@ def exercises(id):
     return {"exercises": [exercise.to_dict() for exercise in exercises]}
 
 @workout_routes.route('/createworkout', methods=['POST'])
+@login_required
 def workoutForm():
     form = WorkoutForm()
     workout = Workout(
