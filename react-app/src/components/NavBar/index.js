@@ -7,7 +7,7 @@ const NavBar = ({ userId }, { setAuthenticated }) => {
   return (
     <div className="navbar-container">
       <div className="navbar-content">
-        <img src="/images/Ironlogs2.png" alt="IronLogs Logo"></img>
+        <img src="/images/Ironlogss.png" alt="IronLogs Logo"></img>
         <nav>
           <ul>
             <li className="navbar-element">
