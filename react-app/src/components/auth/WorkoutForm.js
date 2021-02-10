@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { get_userId, postWorkout } from "../../services/auth";
+import { useDisclosure } from "@chakra-ui/react";
 
-const WorkoutForm = ({ userId }) => {
+const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
     const [title, setTitle] = useState("");
     const [date, setDate] = useState("");
     const [userInfo, setUserInfo] = useState([])
@@ -17,7 +18,13 @@ const WorkoutForm = ({ userId }) => {
 
     const onWorkout = async (e) => {
         e.preventDefault();
-        await postWorkout(userInfo.id, title, date)
+        const workout = await postWorkout(userInfo.id, title, date)
+        setWorkouts((currentWorkouts) => {
+            return (
+                [...currentWorkouts, workout]
+            )
+        })
+        onClose()
     }
 
     const updateTitle = (e) => {
@@ -50,7 +57,7 @@ const WorkoutForm = ({ userId }) => {
                     onChange={updateDate}
                 />
             </div>
-            <button type="submit">Submit</button>
+            <button onClick={onClose} type="submit">Submit</button>
         </form>
     )
 }

@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import "./index.css"
+// import { useSelector } from 'react-redux'
 import WorkoutForm from "../auth/WorkoutForm";
 import ExerciseForm from "../auth/ExerciseForm";
+import WorkoutDrawer from "../WorkoutDrawer";
 
 
 const Workouts = ({ userId }) => {
     const [workouts, setWorkouts] = useState([]);
     const [exercises, setExercises] = useState([]);
+    // const workoutChecker = useSelector()
+
 
     useEffect(() => {
         async function fetchData() {
@@ -27,44 +31,6 @@ const Workouts = ({ userId }) => {
         fetchData();
     }, [userId]);
 
-    function DrawerExample() {
-        const { isOpen, onOpen, onClose } = useDisclosure()
-        const btnRef = React.useRef()
-
-        return (
-            <>
-                <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                    +
-                </Button>
-                <Drawer
-                    isOpen={isOpen}
-                    placement="right"
-                    onClose={onClose}
-                    finalFocusRef={btnRef}
-                >
-                    <DrawerOverlay>
-                        <DrawerContent>
-                            <DrawerCloseButton />
-                            <DrawerHeader>Create your account</DrawerHeader>
-
-                            <DrawerBody>
-                                <WorkoutForm userId={userId} />
-                                {/* <Input placeholder="Type here..." /> */}
-                            </DrawerBody>
-
-                            <DrawerFooter>
-                                <Button variant="outline" mr={3} onClick={onClose}>
-                                    Cancel
-                                </Button>
-                                <Button color="blue">Save</Button>
-                            </DrawerFooter>
-                        </DrawerContent>
-                    </DrawerOverlay>
-                </Drawer>
-            </>
-        )
-    }
-
     return (
         <>
             <div className="mainpage-container">
@@ -72,7 +38,7 @@ const Workouts = ({ userId }) => {
                 <div className="workouts_container">
                     {workouts.map((workout) => {
                         return (
-                            <>
+                            <div key={workout.id}>
                                 <Accordion allowToggle>
                                     <AccordionItem className="indiviual-workout_container">
                                         <AccordionButton className="indiviual-workout_header">
@@ -86,7 +52,7 @@ const Workouts = ({ userId }) => {
                                             {exercises.map((exercise) => {
                                                 if (exercise.workoutId === workout.id) {
                                                     return (
-                                                        <div className="excercise-container">
+                                                        <div key={exercise.id} className="excercise-container">
                                                             <div className="exercise-data">
                                                                 <p>Exercise: {exercise.title}</p>
                                                                 <p>Weight: {exercise.weight}</p>
@@ -117,13 +83,13 @@ const Workouts = ({ userId }) => {
                                         </AccordionPanel>
                                     </AccordionItem>
                                 </Accordion>
-                            </>
+                            </div>
                         )
                     })}
                 </div>
             </div >
             <div className="post-button">
-                {DrawerExample()}
+                <WorkoutDrawer setWorkouts={setWorkouts} userId={userId} />
             </div>
         </>
     )

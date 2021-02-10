@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import "./index.css"
 
-const NavBar = ({ userId }, { setAuthenticated }) => {
+const NavBar = ({ userId, setAuthenticated, authenticated }) => {
   return (
     <div className="navbar-container">
       <div className="navbar-content">
@@ -35,7 +35,7 @@ const NavBar = ({ userId }, { setAuthenticated }) => {
               </NavLink>
             </li>
             <li className="navbar-element">
-              <LogoutButton setAuthenticated={setAuthenticated} />
+              <LogoutButton authenticated={authenticated} setAuthenticated={setAuthenticated} />
             </li>
           </ul>
         </nav>

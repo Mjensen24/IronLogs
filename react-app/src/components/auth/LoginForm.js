@@ -27,6 +27,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   if (authenticated) {
     return <Redirect to="/" />;
+    // need userid to redirect to workouts/userid (userid in navlink =undefined error)
   }
 
   const demoLogin = () => {

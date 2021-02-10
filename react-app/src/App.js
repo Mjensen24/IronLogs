@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar/index";
+import Footer from "./components/Footer/index";
 import HomePage from "./components/Homepage/index"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -17,6 +18,7 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [userInfo, setUserInfo] = useState([])
+  const userId = userInfo.id
 
   useEffect(() => {
     (async () => {
@@ -27,18 +29,17 @@ function App() {
       }
       setLoaded(true);
     })();
-  }, []);
+  }, [authenticated]);
 
   if (!loaded) {
     return null;
   }
 
 
-  const userId = userInfo.id
 
   return (
     <BrowserRouter>
-      <NavBar userId={userId} setAuthenticated={setAuthenticated} />
+      <NavBar authenticated={authenticated} userId={userId} setAuthenticated={setAuthenticated} />
       <Switch>
         <Route path={`/workouts/:${userId}`} exact={true} authenticated={authenticated}>
           <div className="homepage-layout">
@@ -78,6 +79,7 @@ function App() {
           <HomePage />
         </ProtectedRoute>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
