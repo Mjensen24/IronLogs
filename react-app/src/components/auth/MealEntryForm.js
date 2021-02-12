@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { postMealEntry } from "../../services/auth";
 
-const MealEntryForm = (userId) => {
+const MealEntryForm = ({ userId, setMealEntries, onClose }) => {
     const [title, setTitle] = useState("");
     const [date, setDate] = useState("");
 
     const onMealEntry = async (e) => {
         e.preventDefault();
-        await postMealEntry(userId.id, title, date)
+        const mealEntry = await postMealEntry(userId.id, title, date)
+        setMealEntries((currentEntries) => {
+            return (
+                [...currentEntries, mealEntry]
+            )
+        })
+        onClose()
     }
 
     const updateTitle = (e) => {

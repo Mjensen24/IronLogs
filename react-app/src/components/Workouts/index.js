@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
+import { useDisclosure, Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
 import "./index.css"
-// import { useSelector } from 'react-redux'
-import WorkoutForm from "../auth/WorkoutForm";
 import ExerciseForm from "../auth/ExerciseForm";
 import WorkoutDrawer from "../WorkoutDrawer";
 
@@ -10,7 +8,6 @@ import WorkoutDrawer from "../WorkoutDrawer";
 const Workouts = ({ userId }) => {
     const [workouts, setWorkouts] = useState([]);
     const [exercises, setExercises] = useState([]);
-    // const workoutChecker = useSelector()
 
 
     useEffect(() => {
@@ -31,6 +28,8 @@ const Workouts = ({ userId }) => {
         fetchData();
     }, [userId]);
 
+    const { onClose } = useDisclosure()
+
     return (
         <>
             <div className="mainpage-container">
@@ -40,15 +39,15 @@ const Workouts = ({ userId }) => {
                         return (
                             <div key={workout.id}>
                                 <Accordion allowToggle>
-                                    <AccordionItem className="indiviual-workout_container">
-                                        <AccordionButton className="indiviual-workout_header">
+                                    <AccordionItem className="individual-workout_container">
+                                        <AccordionButton _expanded={{ bg: "teal", color: "white" }} className="individual-workout_header">
                                             <Box flex="1" textAlign="left">
                                                 <p>{workout.date}</p>
                                                 <p>{workout.title}</p>
                                             </Box>
                                             <AccordionIcon />
                                         </AccordionButton>
-                                        <AccordionPanel pb={4}>
+                                        <AccordionPanel className="individual-workout_data" pb={4}>
                                             {exercises.map((exercise) => {
                                                 if (exercise.workoutId === workout.id) {
                                                     return (
@@ -76,7 +75,7 @@ const Workouts = ({ userId }) => {
                                                         <AccordionIcon />
                                                     </AccordionButton>
                                                     <AccordionPanel pb={4}>
-                                                        <ExerciseForm workoutId={workout.id} userId={userId} />
+                                                        <ExerciseForm onClose={onClose} setExercises={setExercises} workoutId={workout.id} userId={userId} />
                                                     </AccordionPanel>
                                                 </AccordionItem>
                                             </Accordion>

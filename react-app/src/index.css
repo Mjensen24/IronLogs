@@ -1,4 +1,10 @@
 /* TODO Add site wide styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
 .homepage-layout {
     display: flex;
     flex-direction: row;
@@ -32,4 +38,62 @@
 
 .post-button > button {
 
+}
+
+/* LOGIN PAGE CSS */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+}
+
+.form-container {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(226, 226, 226);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-left: 2px solid #2c7a7b;
+    border-top: 2px solid #2c7a7b;
+    border-bottom: 2px solid #2c7a7b;
+}
+
+.form-inner {
+    margin-top: 80px;
+}
+
+.login-input {
+    width: 210px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.form-photo {
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+}
+
+.form-photo img {
+    height: 80%;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* border-right: 2px solid rgb(168, 168, 168);
+    border-top: 2px solid rgb(168, 168, 168);
+    border-bottom: 2px solid rgb(168, 168, 168); */
 }

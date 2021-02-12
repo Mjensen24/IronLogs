@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { postMeal } from "../../services/auth";
 
-const MealForm = ({ userId, mealEntryId }) => {
+const MealForm = ({ userId, mealEntryId, setMeals }) => {
     const [title, setTitle] = useState("");
     const [calories, setCalories] = useState("");
     const [fat, setFat] = useState("");
@@ -10,7 +10,12 @@ const MealForm = ({ userId, mealEntryId }) => {
 
     const onMeal = async (e) => {
         e.preventDefault();
-        await postMeal(userId, mealEntryId, title, calories, fat, carbs, water)
+        const meal = await postMeal(userId, mealEntryId, title, calories, fat, carbs, water)
+        setMeals((currentMeals) => {
+            return (
+                [...currentMeals, meal]
+            )
+        })
     }
 
     const updateTitle = (e) => {

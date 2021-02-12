@@ -1,6 +1,19 @@
 .footer-container {
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
     width: 100%;
     background-color: lightgray;
-    /* margin-top: 350px; */
+}
+
+.top {
+    height: 60%;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+.bottom {
+    height: 40%;
+    width: 100%;
+    background-color: #2C7A7B;
 }

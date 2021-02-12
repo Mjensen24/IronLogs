@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { postEntry } from "../../services/auth";
 
-const DiaryForm = ({ userId }) => {
+const DiaryForm = ({ userId, setEntries, onClose }) => {
     const [title, setTitle] = useState("");
     const [date, setDate] = useState("");
     const [notes, setNotes] = useState("");
@@ -9,7 +9,13 @@ const DiaryForm = ({ userId }) => {
 
     const onEntry = async (e) => {
         e.preventDefault();
-        await postEntry(userId, title, notes, date)
+        const entry = await postEntry(userId, title, notes, date)
+        setEntries((currentEntries) => {
+            return (
+                [...currentEntries, entry]
+            )
+        })
+        onClose()
     }
 
     const updateTitle = (e) => {

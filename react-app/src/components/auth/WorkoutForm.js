@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { get_userId, postWorkout } from "../../services/auth";
-import { useDisclosure } from "@chakra-ui/react";
 
 const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
     const [title, setTitle] = useState("");
@@ -57,7 +56,7 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
                     onChange={updateDate}
                 />
             </div>
-            <button onClick={onClose} type="submit">Submit</button>
+            <button type="submit">Submit</button>
         </form>
     )
 }

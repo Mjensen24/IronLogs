@@ -4,7 +4,12 @@ import './index.css'
 const Footer = () => {
     return (
         <div className="footer-container">
-            <h1>Footer</h1>
+            <div className="top">
+
+            </div>
+            <div className="bottom">
+                <h1>Bottom</h1>
+            </div>
         </div>
     )
 }

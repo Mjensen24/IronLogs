@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
-import WorkoutForm from '../auth/WorkoutForm'
+import DiaryForm from '../auth/DiaryForm'
 
-function WorkoutDrawer({ setWorkouts, userId }) {
+function DiaryDrawer({ setEntries, userId }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
 
@@ -22,10 +22,10 @@ function WorkoutDrawer({ setWorkouts, userId }) {
                 <DrawerOverlay>
                     <DrawerContent>
                         <DrawerCloseButton />
-                        <DrawerHeader>Create your Workout</DrawerHeader>
+                        <DrawerHeader>Create your Daiary Entry</DrawerHeader>
 
                         <DrawerBody>
-                            <WorkoutForm onClose={onClose} setWorkouts={setWorkouts} userId={userId} />
+                            <DiaryForm onClose={onClose} setEntries={setEntries} userId={userId} />
 
                         </DrawerBody>
 
@@ -42,4 +42,4 @@ function WorkoutDrawer({ setWorkouts, userId }) {
     )
 }
 
-export default WorkoutDrawer;
+export default DiaryDrawer;

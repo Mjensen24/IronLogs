@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon, useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
-import MealEntryForm from "../auth/MealEntryForm"
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
 import "./index.css"
 import MealForm from '../auth/MealForm'
+import MealEntryDrawer from '../MealEntryDrawer'
 
 const FoodTracker = ({ userId }) => {
     const [mealEntries, setMealEntries] = useState([]);
@@ -26,42 +26,6 @@ const FoodTracker = ({ userId }) => {
         fetchData();
     }, [userId]);
 
-    function DrawerExample() {
-        const { isOpen, onOpen, onClose } = useDisclosure()
-        const btnRef = React.useRef()
-
-        return (
-            <>
-                <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                    +
-                </Button>
-                <Drawer
-                    isOpen={isOpen}
-                    placement="right"
-                    onClose={onClose}
-                    finalFocusRef={btnRef}
-                >
-                    <DrawerOverlay>
-                        <DrawerContent>
-                            <DrawerCloseButton />
-                            <DrawerHeader>Create your account</DrawerHeader>
-
-                            <DrawerBody>
-                                <MealEntryForm userId={userId} />
-                            </DrawerBody>
-
-                            <DrawerFooter>
-                                <Button variant="outline" mr={3} onClick={onClose}>
-                                    Cancel
-                                </Button>
-                                <Button color="blue">Save</Button>
-                            </DrawerFooter>
-                        </DrawerContent>
-                    </DrawerOverlay>
-                </Drawer>
-            </>
-        )
-    }
 
     return (
         <>
@@ -70,7 +34,7 @@ const FoodTracker = ({ userId }) => {
                 <div className="meals_container">
                     {mealEntries.map((entry) => {
                         return (
-                            <>
+                            <div key={entry.id}>
                                 <Accordion allowMultiple>
                                     <AccordionItem>
                                         <h2>
@@ -86,7 +50,7 @@ const FoodTracker = ({ userId }) => {
                                             {meals.map((meal) => {
                                                 if (meal.mealEntryId === entry.id) {
                                                     return (
-                                                        <div className="meal-container">
+                                                        <div key={meal.id} className="meal-container">
                                                             <div className="meal-data">
                                                                 <p className="meal-data_entry">{meal.title}</p>
                                                                 <p className="meal-data_entry">Calories: {meal.calories}</p>
@@ -110,7 +74,7 @@ const FoodTracker = ({ userId }) => {
                                                         </AccordionButton>
                                                     </h2>
                                                     <AccordionPanel pb={4}>
-                                                        <MealForm userId={userId} mealEntryId={entry.id} />
+                                                        <MealForm setMeals={setMeals} userId={userId} mealEntryId={entry.id} />
                                                     </AccordionPanel>
                                                 </AccordionItem>
                                             </Accordion>
@@ -118,13 +82,13 @@ const FoodTracker = ({ userId }) => {
                                     </AccordionItem>
                                 </Accordion>
 
-                            </>
+                            </div>
                         )
                     })}
                 </div>
             </div>
             <div className="post-button">
-                {DrawerExample()}
+                <MealEntryDrawer setMealEntries={setMealEntries} userId={userId} />
             </div>
         </>
     )

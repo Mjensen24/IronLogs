@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { postExercise } from "../../services/auth";
 
-const ExerciseForm = ({ userId, workoutId }) => {
+const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
     const [title, setTitle] = useState("");
     const [reps, setReps] = useState("");
     const [sets, setSets] = useState("");
@@ -9,18 +9,15 @@ const ExerciseForm = ({ userId, workoutId }) => {
     const [notes, setNotes] = useState("");
 
 
-
-    // useEffect(() => {
-    //     (async () => {
-    //         const user = await get_userId();
-    //         setUserInfo(user)
-    //     })();
-    // }, []);
-
-
     const onExercise = async (e) => {
         e.preventDefault();
-        await postExercise(userId, workoutId, title, reps, sets, weight, notes)
+        const exercise = await postExercise(userId, workoutId, title, reps, sets, weight, notes)
+        setExercises((currentExercise) => {
+            return (
+                [...currentExercise, exercise]
+            )
+        })
+        onClose()
     }
 
     const updateTitle = (e) => {
@@ -44,9 +41,9 @@ const ExerciseForm = ({ userId, workoutId }) => {
     };
 
     return (
-        <form onSubmit={onExercise}>
-            <div>
-                <label htmlFor="title">Title</label>
+        <form className="exercise-form" onSubmit={onExercise}>
+            <div className="form-title">
+                <label htmlFor="title"></label>
                 <input
                     name="title"
                     type="text"
@@ -55,41 +52,43 @@ const ExerciseForm = ({ userId, workoutId }) => {
                     onChange={updateTitle}
                 />
             </div>
-            <div>
-                <label htmlFor="reps">Reps</label>
-                <input
-                    name="reps"
-                    type="number"
-                    placeholder="reps"
-                    value={reps}
-                    onChange={updateReps}
-                />
+            <div className="form-nums">
+                <div>
+                    <label htmlFor="reps"></label>
+                    <input
+                        name="reps"
+                        type="number"
+                        placeholder="reps"
+                        value={reps}
+                        onChange={updateReps}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="sets"></label>
+                    <input
+                        name="sets"
+                        type="number"
+                        placeholder="sets"
+                        value={sets}
+                        onChange={updateSets}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="weight"></label>
+                    <input
+                        name="weight"
+                        type="number"
+                        placeholder="weight"
+                        value={weight}
+                        onChange={updateWeight}
+                    />
+                </div>
             </div>
-            <div>
-                <label htmlFor="sets">Sets</label>
-                <input
-                    name="sets"
-                    type="number"
-                    placeholder="sets"
-                    value={sets}
-                    onChange={updateSets}
-                />
-            </div>
-            <div>
-                <label htmlFor="weight">Weight</label>
-                <input
-                    name="weight"
-                    type="number"
-                    placeholder="weight"
-                    value={weight}
-                    onChange={updateWeight}
-                />
-            </div>
-            <div>
-                <label htmlFor="notes">notes</label>
+            <div className="form-notes">
+                <label htmlFor="notes"></label>
                 <input
                     name="notes"
-                    type="text"
+                    type="textbox"
                     placeholder="notes"
                     value={notes}
                     onChange={updateNotes}
