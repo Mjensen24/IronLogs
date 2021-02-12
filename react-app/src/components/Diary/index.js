@@ -24,9 +24,9 @@ const Diary = ({ userId }) => {
                         return (
                             <div key={entry.id}>
                                 <Accordion allowToggle>
-                                    <AccordionItem>
+                                    <AccordionItem className="entry">
                                         <h2>
-                                            <AccordionButton>
+                                            <AccordionButton className="entries_header" _expanded={{ bg: "teal", color: "white" }}>
                                                 <Box flex="1" textAlign="left">
                                                     <p>{entry.date}</p>
                                                     <p>{entry.title}</p>

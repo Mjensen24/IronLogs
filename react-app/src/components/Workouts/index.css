@@ -57,14 +57,44 @@
     margin-bottom: 10px;
 }
 
+.exercise-form_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 585px;
+    height: 155px;
+}
+
+
 .exercise-form {
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.exercise-form input {
+    border-radius: 5px;
+    height: 30px;
+}
+
+.exercise-form > button {
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #008080;
+    color: white;
+}
+
+.form-title {
+    width: 100%;
 }
 
 .form-title > input{
-    width: 250px;
-    border-radius: 5px;
+    width: 90%;
     margin-bottom: 5px;
 }
 
@@ -75,12 +105,11 @@
 }
 
 .form-nums input {
-    width: 80px;
+    width: 28.82%;
     margin-right: 10px;
     border-radius: 5px;
 }
 
 .form-notes  input {
-    width: 50%;
-
+    width: 90%;
 }

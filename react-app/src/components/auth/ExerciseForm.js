@@ -41,19 +41,19 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
     };
 
     return (
-        <form className="exercise-form" onSubmit={onExercise}>
-            <div className="form-title">
-                <label htmlFor="title"></label>
-                <input
-                    name="title"
-                    type="text"
-                    placeholder="Title"
-                    value={title}
-                    onChange={updateTitle}
-                />
-            </div>
-            <div className="form-nums">
-                <div>
+        <div className="exercise-form_container">
+            <form className="exercise-form" onSubmit={onExercise}>
+                <div className="form-title">
+                    <label htmlFor="title"></label>
+                    <input
+                        name="title"
+                        type="text"
+                        placeholder="Title"
+                        value={title}
+                        onChange={updateTitle}
+                    />
+                </div>
+                <div className="form-nums">
                     <label htmlFor="reps"></label>
                     <input
                         name="reps"
@@ -62,8 +62,6 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         value={reps}
                         onChange={updateReps}
                     />
-                </div>
-                <div>
                     <label htmlFor="sets"></label>
                     <input
                         name="sets"
@@ -72,8 +70,6 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         value={sets}
                         onChange={updateSets}
                     />
-                </div>
-                <div>
                     <label htmlFor="weight"></label>
                     <input
                         name="weight"
@@ -83,19 +79,19 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         onChange={updateWeight}
                     />
                 </div>
-            </div>
-            <div className="form-notes">
-                <label htmlFor="notes"></label>
-                <input
-                    name="notes"
-                    type="textbox"
-                    placeholder="notes"
-                    value={notes}
-                    onChange={updateNotes}
-                />
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+                <div className="form-notes">
+                    <label htmlFor="notes"></label>
+                    <input
+                        name="notes"
+                        type="textbox"
+                        placeholder="notes"
+                        value={notes}
+                        onChange={updateNotes}
+                    />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     )
 }
 

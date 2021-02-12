@@ -68,7 +68,7 @@ const Workouts = ({ userId }) => {
                                             })}
                                             <Accordion allowMultiple>
                                                 <AccordionItem>
-                                                    <AccordionButton>
+                                                    <AccordionButton _expanded={{ bg: "teal", color: "white" }}>
                                                         <Box flex="1" textAlign="left">
                                                             Add Exercise
                                                         </Box>
