@@ -34,7 +34,7 @@ const Diary = ({ userId }) => {
                                                 <AccordionIcon />
                                             </AccordionButton>
                                         </h2>
-                                        <AccordionPanel pb={4}>
+                                        <AccordionPanel className="entry-data" pb={4}>
                                             <p>{entry.notes}</p>
                                         </AccordionPanel>
                                     </AccordionItem>

@@ -33,8 +33,6 @@
     flex-direction: column;
     justify-content: center;
     background-color: rgb(233, 233, 233);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
 .excercise-container {

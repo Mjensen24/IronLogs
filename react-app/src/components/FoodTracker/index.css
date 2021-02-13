@@ -6,8 +6,18 @@
     padding-top: 10px;
 }
 
-.meal-container {
+.entry_container {
+    border-top: 0px;
+}
 
+.entry_container button:hover {
+    color: white;
+    transition: 0.5s;
+    background-color: #3e9697
+}
+
+.entry_container button:focus {
+    box-shadow: none;
 }
 
 .meal-data{

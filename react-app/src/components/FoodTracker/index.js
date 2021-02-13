@@ -36,9 +36,9 @@ const FoodTracker = ({ userId }) => {
                         return (
                             <div key={entry.id}>
                                 <Accordion allowMultiple>
-                                    <AccordionItem>
+                                    <AccordionItem className="entry_container">
                                         <h2>
-                                            <AccordionButton>
+                                            <AccordionButton _expanded={{ bg: "teal", color: "white" }}>
                                                 <Box flex="1" textAlign="left">
                                                     <p>{entry.date}</p>
                                                     <p>{entry.title}</p>
@@ -66,7 +66,7 @@ const FoodTracker = ({ userId }) => {
                                             <Accordion allowMultiple>
                                                 <AccordionItem>
                                                     <h2>
-                                                        <AccordionButton>
+                                                        <AccordionButton _expanded={{ bg: "teal", color: "white" }}>
                                                             <Box flex="1" textAlign="left">
                                                                 Add Meal
                                                             </Box>

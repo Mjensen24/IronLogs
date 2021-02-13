@@ -20,3 +20,7 @@
 .entries_container button:focus {
     box-shadow: none;
 }
+
+.entry-data {
+    background-color: rgb(233, 233, 233);
+}
