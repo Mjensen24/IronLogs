@@ -96,3 +96,20 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
 }
 
 export default ExerciseForm;
+
+
+// code to empty the form values after a submission
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+// import { useState } from "react";
+// const useInputState = (initialVal) => {
+//     const [value, setValue] = useState(initialVal);
+//     const handleChange = (e) => {
+//         setValue(e.target.value);
+//     };
+//     const reset = () => {
+//         setValue("");
+//     };
+//     return [value, handleChange, reset];
+// };
+// export default useInputState;
