@@ -17,7 +17,7 @@ from .seeds import seed_commands
 from .config import Config
 
 # app = Flask(__name__)
-app = Flask(__name__, static_folder="../react-app/build/static")
+app = Flask(__name__, static_folder="../react-app/build/static", static_url_path="")
 
 # Setup login manager
 login = LoginManager(app)
@@ -76,8 +76,8 @@ def react_root(path):
     print("path", path)
     if path == 'favicon.ico':
         # return send_from_directory('../react-app/build/', "favicon-32x32.png")
-        return send_from_directory('../react-app/build/', "favicon.ico")
-    return send_from_directory('../react-app/build/', 'index.html')
+        return send_from_directory(app.static_folder, "favicon.ico")
+    return send_from_directory(app.static_folder, 'index.html')
 
 # @app.route('/', defaults={'path': ''})
 # @app.route('/<path:path>')
