@@ -37,10 +37,12 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   return (
     <div className="login-container">
+      <img src="/images/plant.jpg" alt="plant"></img>
       <div className="form-container">
         <div className="form-info">
           <div className="form-inner">
             <form onSubmit={onLogin}>
+              <img className="form-img" src="/images/barbell.png" alt="IronLogs"></img>
               <div>
                 {errors.map((error) => (
                   <div>{error}</div>
@@ -78,9 +80,9 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             <p>Dont have an account? Sign up</p>
           </div>
         </div>
-        <div className="form-photo">
+        {/* <div className="form-photo">
           <img src="/images/loginlogo.png" alt="IronLogs"></img>
-        </div>
+        </div> */}
       </div>
     </div>
   );
