@@ -74,7 +74,7 @@ def inject_csrf_token(response):
 @app.route('/<path:path>')
 def react_root(path):
     print("path", path)
-    if path == 'favicon-32x32.png':
+    if path == 'favicon.ico':
         # return send_from_directory('../react-app/build/', "favicon-32x32.png")
         return send_from_directory('../react-app/build/', "favicon.ico")
     return send_from_directory('../react-app/build/', 'index.html')
