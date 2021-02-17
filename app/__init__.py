@@ -17,7 +17,7 @@ from .seeds import seed_commands
 from .config import Config
 
 # app = Flask(__name__)
-app = Flask(__name__, static_folder="../react-app/build/static", static_url_path="")
+app = Flask(__name__, static_folder="../react-app/build/static", static_url_path="/")
 
 # Setup login manager
 login = LoginManager(app)
@@ -89,4 +89,4 @@ def react_root(path):
 
 @app.errorhandler(404)
 def not_found(e):
-    return app.send_from_directory('../react-app/build/', 'index.html')
+    return app.send_static_file('index.html')
