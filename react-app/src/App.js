@@ -61,6 +61,7 @@ function App() {
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm
+            userId={userId}
             authenticated={authenticated}
             setAuthenticated={setAuthenticated}
           />
@@ -74,9 +75,9 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+        <Route path="/" exact={true} authenticated={authenticated}>
           <HomePage />
-        </ProtectedRoute>
+        </Route>
       </Switch>
       <Footer />
     </BrowserRouter>

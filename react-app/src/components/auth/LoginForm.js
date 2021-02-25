@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { login } from "../../services/auth";
 
-const LoginForm = ({ authenticated, setAuthenticated }) => {
+const LoginForm = ({ userId, authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +26,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to={`/workouts/${userId}`} />;
     // need userid to redirect to workouts/userid (userid in navlink =undefined error)
   }
 
@@ -37,12 +37,13 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   return (
     <div className="login-container">
-      <img src="/images/plant.jpg" alt="plant"></img>
+      <img src="/images/gympeople.jpg" alt="plant"></img>
       <div className="form-container">
         <div className="form-info">
+          <h1>Welcome to IronLogs</h1>
+          <img className="form-img" src="/images/barbell.png" alt="IronLogs"></img>
           <div className="form-inner">
-            <form onSubmit={onLogin}>
-              <img className="form-img" src="/images/barbell.png" alt="IronLogs"></img>
+            <form className="content" onSubmit={onLogin}>
               <div>
                 {errors.map((error) => (
                   <div>{error}</div>
@@ -77,7 +78,10 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             </form>
           </div>
           <div className="form-footer">
-            <p>Dont have an account? Sign up</p>
+            <p>Dont have an account?</p>
+            <Link to="/sign-up">
+              Sign Up
+            </Link>
           </div>
         </div>
         {/* <div className="form-photo">

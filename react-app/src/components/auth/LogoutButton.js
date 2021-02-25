@@ -9,7 +9,7 @@ const LogoutButton = ({ authenticated, setAuthenticated }) => {
   };
 
   if (!authenticated) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   }
 
   return <button onClick={onLogout}>Logout</button>;

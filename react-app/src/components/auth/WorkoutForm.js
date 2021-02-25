@@ -35,9 +35,9 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
     };
 
     return (
-        <form onSubmit={onWorkout}>
+        <form className="workout-form" onSubmit={onWorkout}>
             <div>
-                <label htmlFor="title">Title</label>
+                <label className="workout-form_input" htmlFor="title"></label>
                 <input
                     name="title"
                     type="text"
@@ -47,7 +47,7 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
                 />
             </div>
             <div>
-                <label htmlFor="date">Date</label>
+                <label className="workout-form_input" htmlFor="date"></label>
                 <input
                     name="date"
                     type="date"
@@ -56,7 +56,7 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
                     onChange={updateDate}
                 />
             </div>
-            <button type="submit">Submit</button>
+            <button className="workout-form_input" type="submit">Submit</button>
         </form>
     )
 }

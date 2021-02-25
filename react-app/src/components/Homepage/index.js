@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
-// import { Route, Switch } from 'react-router-dom';
-// import Diary from '../Diary';
-// import FoodTracker from '../FoodTracker';
-// import Workouts from '../Workouts';
 
 const HomePage = () => {
     return (
@@ -13,9 +9,14 @@ const HomePage = () => {
                 <div className="intro">
                     <h1>It's Time to Get Moving</h1>
                     <h4>IronLogs will help you get your life together man I promise you're gunna love this app</h4>
-                    <Link to="/sign-up">
-                        Sign Up
-                    </Link>
+                    <div className="intro-links">
+                        <Link to="/sign-up">
+                            Sign Up
+                        </Link>
+                        <Link to="/login">
+                            Login
+                        </Link>
+                    </div>
                 </div>
                 <img className="intro-img" src="/images/workout.gif" alt="workout-gif"></img>
             </div>
