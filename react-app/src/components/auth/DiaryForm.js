@@ -31,9 +31,9 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
     };
 
     return (
-        <form onSubmit={onEntry}>
+        <form className="workout-form" onSubmit={onEntry}>
             <div>
-                <label htmlFor="title">Title</label>
+                <label className="workout-form_input" htmlFor="title"></label>
                 <input
                     name="title"
                     type="text"
@@ -43,7 +43,7 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                 />
             </div>
             <div>
-                <label htmlFor="date">Date</label>
+                <label className="workout-form_input" htmlFor="date"></label>
                 <input
                     name="date"
                     type="date"
@@ -53,7 +53,7 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                 />
             </div>
             <div>
-                <label htmlFor="notes">notes</label>
+                <label className="workout-form_input" htmlFor="notes"></label>
                 <input
                     name="notes"
                     type="text"
@@ -62,7 +62,7 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                     onChange={updateNotes}
                 />
             </div>
-            <button type="submit">Submit</button>
+            <button className="workout-form_input" type="submit">Submit</button>
         </form>
     )
 }

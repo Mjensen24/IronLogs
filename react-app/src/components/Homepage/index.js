@@ -10,12 +10,16 @@ const HomePage = () => {
                     <h1>It's Time to Get Moving</h1>
                     <h4>IronLogs will help you get your life together man I promise you're gunna love this app</h4>
                     <div className="intro-links">
-                        <Link to="/sign-up">
-                            Sign Up
-                        </Link>
-                        <Link to="/login">
-                            Login
-                        </Link>
+                        <div className="link-div">
+                            <Link to="/sign-up">
+                                Sign Up
+                            </Link>
+                        </div>
+                        <div className="link-div">
+                            <Link to="/login">
+                                Login
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <img className="intro-img" src="/images/workout.gif" alt="workout-gif"></img>

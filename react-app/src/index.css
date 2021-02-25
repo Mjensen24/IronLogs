@@ -125,8 +125,8 @@
 
 .form-buttons button:hover{
     transition: .5s;
-    background-color: #7B2C2C;
-    color: white;
+    background-color: lightgrey;
+
 }
 
 .form-footer {
@@ -168,7 +168,7 @@
 }
 
 .workout-form input:focus {
-    box-shadow: red;
+
 }
 
 .workout-form_input {

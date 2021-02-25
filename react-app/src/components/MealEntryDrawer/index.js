@@ -33,7 +33,6 @@ function MealEntryDrawer({ setMealEntries, userId }) {
                             <Button variant="outline" mr={3} onClick={onClose}>
                                 Cancel
                             </Button>
-                            <Button color="blue">Save</Button>
                         </DrawerFooter>
                     </DrawerContent>
                 </DrawerOverlay>

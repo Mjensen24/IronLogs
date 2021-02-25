@@ -32,6 +32,34 @@
     font-size: 20px;
 }
 
+.intro-links {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.link-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    width: 100px;
+    height: 35px;
+    /* background-color: lightgrey; */
+    border: 2px solid #008080;
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+.link-div:hover {
+    cursor: pointer;
+    background-color: #008080;
+    border: none;
+    color: white;
+    transition: .3s;
+}
+
+
 .intro-img {
     height: 340px;
     width: 440px;
