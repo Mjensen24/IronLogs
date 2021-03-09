@@ -27,7 +27,7 @@ const HomePage = () => {
             <div className="homepage-layer2">
                 <div className="description">
                     <h1>Start Counting on Genuine Results</h1>
-                    <p>Make unlimited commission-free trades in stocks, ETFs, and options with Rockinhood Financial, as well as buy and sell cryptocurrencies with Rockinhood Crypto. See our fee schedule to learn more about cost.</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
                 </div>
             </div>
             <div className="homepage-layer3">
@@ -38,15 +38,15 @@ const HomePage = () => {
                         <p>Start investing if your health for free.</p>
                         <div className="features-info_list">
                             <div className="feature-item">
-                                <h1>Feature</h1>
+                                <h1>Workouts</h1>
                                 <p>I really like this feature alot becuase it is a very cool feature am i right boys?</p>
                             </div>
                             <div className="feature-item">
-                                <h1>Feature</h1>
+                                <h1>Diary</h1>
                                 <p>I really like this feature alot becuase it is a very cool feature am i right boys?</p>
                             </div>
                             <div className="feature-item">
-                                <h1>Feature</h1>
+                                <h1>Food Tracker</h1>
                                 <p>I really like this feature alot becuase it is a very cool feature am i right boys?</p>
                             </div>
                         </div>

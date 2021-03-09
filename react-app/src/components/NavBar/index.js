@@ -29,11 +29,11 @@ const NavBar = ({ userId, setAuthenticated, authenticated }) => {
                 </li>
               </>
             )}
-            <li className="navbar-element">
+            {/* <li className="navbar-element">
               <NavLink to="/users" exact={true} activeClassName="active">
                 Users
               </NavLink>
-            </li>
+            </li> */}
             <li className="navbar-element">
               <LogoutButton authenticated={authenticated} setAuthenticated={setAuthenticated} />
             </li>
