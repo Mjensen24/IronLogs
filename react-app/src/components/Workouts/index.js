@@ -9,7 +9,6 @@ const Workouts = ({ userId }) => {
     const [workouts, setWorkouts] = useState([]);
     const [exercises, setExercises] = useState([]);
 
-
     useEffect(() => {
         async function fetchData() {
             const response = await fetch(`/api/workouts/${userId}`);

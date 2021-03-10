@@ -150,6 +150,6 @@
     margin-right: 30px;
 }
 
-.feature-item > h1 {
+.feature-item > a {
     font-weight: 600;
 }

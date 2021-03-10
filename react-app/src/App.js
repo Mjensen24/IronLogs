@@ -4,6 +4,7 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar/index";
 import Footer from "./components/Footer/index";
+import Footer2 from "./components/Footer2/index";
 import HomePage from "./components/Homepage/index"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -76,10 +77,15 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path="/" exact={true} authenticated={authenticated}>
-          <HomePage />
+          <HomePage userId={userId}/>
         </Route>
       </Switch>
-      <Footer />
+      {!userId && (
+        <Footer2 />
+      )}
+      {userId && (
+        <Footer />
+      )}
     </BrowserRouter>
   );
 }

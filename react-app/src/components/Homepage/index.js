@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
 
-const HomePage = () => {
+const HomePage = ({userId}) => {
     return (
         <div className="homepage-container">
             <div className="homepage-layer1">
@@ -38,16 +38,25 @@ const HomePage = () => {
                         <p>Start investing if your health for free.</p>
                         <div className="features-info_list">
                             <div className="feature-item">
-                                <h1>Workouts</h1>
-                                <p>I really like this feature alot becuase it is a very cool feature am i right boys?</p>
+                                <Link
+                                    to={`/workouts/${userId}`}>
+                                    Workouts
+                                </Link>
+                                <p>Create daily workouts with a variety of personalized exercises</p>
                             </div>
                             <div className="feature-item">
-                                <h1>Diary</h1>
-                                <p>I really like this feature alot becuase it is a very cool feature am i right boys?</p>
+                                <Link
+                                    to={`/diary/${userId}`}>
+                                    Diary
+                                </Link>
+                                <p>Track your personalized progress with your own diary entries</p>
                             </div>
                             <div className="feature-item">
-                                <h1>Food Tracker</h1>
-                                <p>I really like this feature alot becuase it is a very cool feature am i right boys?</p>
+                                <Link
+                                    to={`/foodtracker/${userId}`}>
+                                    Food Tracker
+                                </Link>
+                                <p>Keep updated records of your daily meals with a calorie counter and more!</p>
                             </div>
                         </div>
                         <Link to="/sign-up">

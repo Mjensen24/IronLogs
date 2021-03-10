@@ -1,0 +1,26 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+}
+
+.top {
+    height: 200px;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+}
+
+.bottom a {
+    margin-right: 25px;
+}

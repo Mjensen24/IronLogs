@@ -41,7 +41,7 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
     return (
         <div className="meal-form_container">
             <form className="meal-form" onSubmit={onMeal}>
-                <div>
+                <div className="meal-title">
                     <label htmlFor="title"></label>
                     <input
                         name="title"
@@ -51,45 +51,43 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
                         onChange={updateTitle}
                     />
                 </div>
-                <div>
-                    <label htmlFor="reps"></label>
-                    <input
-                        name="calories"
-                        type="number"
-                        placeholder="calories"
-                        value={calories}
-                        onChange={updateCalories}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="fat"></label>
-                    <input
-                        name="fat"
-                        type="number"
-                        placeholder="fat"
-                        value={fat}
-                        onChange={updateFat}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="carbs"></label>
-                    <input
-                        name="carbs"
-                        type="number"
-                        placeholder="carbs"
-                        value={carbs}
-                        onChange={updateCarbs}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="water"></label>
-                    <input
-                        name="water"
-                        type="text"
-                        placeholder="water"
-                        value={water}
-                        onChange={updateWater}
-                    />
+                <div className="input_container">
+                    <div className="meal-inputs_left">
+                        <label htmlFor="reps"></label>
+                        <input
+                            name="calories"
+                            type="number"
+                            placeholder="calories"
+                            value={calories}
+                            onChange={updateCalories}
+                        />
+                        <label htmlFor="fat"></label>
+                        <input
+                            name="fat"
+                            type="number"
+                            placeholder="fat"
+                            value={fat}
+                            onChange={updateFat}
+                        />
+                    </div>
+                    <div className="meal-inputs_right">
+                        <label htmlFor="carbs"></label>
+                        <input
+                            name="carbs"
+                            type="number"
+                            placeholder="carbs"
+                            value={carbs}
+                            onChange={updateCarbs}
+                        />
+                        <label htmlFor="water"></label>
+                        <input
+                            name="water"
+                            type="text"
+                            placeholder="water"
+                            value={water}
+                            onChange={updateWater}
+                        />
+                    </div>
                 </div>
                 <button type="submit">Submit</button>
             </form>
