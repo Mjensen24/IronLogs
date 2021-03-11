@@ -1,7 +1,8 @@
 import React from 'react'
-
 import { useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import DiaryForm from '../auth/DiaryForm'
+import { BsPlusCircle } from 'react-icons/bs';
+
 
 function DiaryDrawer({ setEntries, userId }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -10,8 +11,8 @@ function DiaryDrawer({ setEntries, userId }) {
 
     return (
         <>
-            <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                +
+            <Button className="creation-button" ref={btnRef} colorScheme="white" onClick={onOpen}>
+                <BsPlusCircle color="#008080" />
             </Button>
             <Drawer
                 isOpen={isOpen}

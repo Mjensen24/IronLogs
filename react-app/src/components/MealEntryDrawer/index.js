@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import MealEntryForm from "../auth/MealEntryForm"
+import { BsPlusCircle } from 'react-icons/bs';
 
 function MealEntryDrawer({ setMealEntries, userId }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -10,8 +11,8 @@ function MealEntryDrawer({ setMealEntries, userId }) {
 
     return (
         <>
-            <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                +
+            <Button className="creation-button" ref={btnRef} colorScheme="white" onClick={onOpen}>
+                <BsPlusCircle color="#008080" />
             </Button>
             <Drawer
                 isOpen={isOpen}

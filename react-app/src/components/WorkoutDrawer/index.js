@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDisclosure, Button, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react"
 import WorkoutForm from '../auth/WorkoutForm'
+import { BsPlusCircle } from 'react-icons/bs';
 import './index.css'
 
 function WorkoutDrawer({ setWorkouts, userId }) {
@@ -10,9 +11,8 @@ function WorkoutDrawer({ setWorkouts, userId }) {
 
     return (
         <>
-            <h1 className="test">test</h1>
-            <Button className="creation-button" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                +
+            <Button className="creation-button" ref={btnRef} colorScheme="white" onClick={onOpen}>
+                <BsPlusCircle color="#008080" />
             </Button>
             <Drawer
                 isOpen={isOpen}
