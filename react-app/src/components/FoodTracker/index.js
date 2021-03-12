@@ -46,7 +46,7 @@ const FoodTracker = ({ userId }) => {
                                                 <AccordionIcon />
                                             </AccordionButton>
                                         </h2>
-                                        <AccordionPanel pb={4}>
+                                        <AccordionPanel className="total-meals" pb={4}>
                                             {meals.map((meal) => {
                                                 if (meal.mealEntryId === entry.id) {
                                                     return (
