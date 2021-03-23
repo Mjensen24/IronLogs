@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
 
-const HomePage = ({userId}) => {
+const HomePage = ({ userId }) => {
     return (
         <div className="homepage-container">
             <div className="homepage-layer1">
@@ -22,7 +22,7 @@ const HomePage = ({userId}) => {
                         </div>
                     </div>
                 </div>
-                <img className="intro-img" src="/images/workout.gif" alt="workout-gif"></img>
+                <img className="intro-img" src="https://ironlogs.s3.amazonaws.com/workout.gif" alt="workout-gif"></img>
             </div>
             <div className="homepage-layer2">
                 <div className="description">
@@ -32,7 +32,7 @@ const HomePage = ({userId}) => {
             </div>
             <div className="homepage-layer3">
                 <div className="features">
-                    <img src="/images/geometric.jpg" alt="workout-gif"></img>
+                    <img src="https://ironlogs.s3.amazonaws.com/geometric.jpg" alt="workout-gif"></img>
                     <div className="features-info">
                         <h1>Introduce a New Lifestyle</h1>
                         <p>Start investing if your health for free.</p>

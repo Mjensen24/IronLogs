@@ -58,7 +58,7 @@ const Workouts = ({ userId }) => {
                                                                 <p>Sets: {exercise.sets}</p>
                                                             </div>
                                                             <p>Notes: {exercise.notes}</p>
-                                                            <button>test</button>
+                                                            {/* <button>test</button> */}
                                                         </div>
                                                     )
                                                 }

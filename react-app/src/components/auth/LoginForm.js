@@ -37,11 +37,11 @@ const LoginForm = ({ userId, authenticated, setAuthenticated }) => {
 
   return (
     <div className="login-container">
-      <img src="/images/gympeople.jpg" alt="plant"></img>
+      <img src="https://ironlogs.s3.amazonaws.com/gympeople.jpg" alt="plant"></img>
       <div className="form-container">
         <div className="form-info">
           <h1>Welcome to IronLogs</h1>
-          <img className="form-img" src="/images/barbell.png" alt="IronLogs"></img>
+          <img className="form-img" src="https://ironlogs.s3.amazonaws.com/barbell.png" alt="IronLogs"></img>
           <div className="form-inner">
             <form className="content" onSubmit={onLogin}>
               <div>
