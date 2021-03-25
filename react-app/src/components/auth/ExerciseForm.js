@@ -8,16 +8,13 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
     const [weight, setWeight] = useState("");
     const [notes, setNotes] = useState("");
 
-    // const useInputState = (initialVal) => {
-    //     const [value, setValue] = useState(initialVal);
-    //     const handleChange = (e) => {
-    //         setValue(e.target.value);
-    //     };
-    //     const reset = () => {
-    //         setValue("");
-    //     };
-    //     return [value, handleChange, reset];
-    // };
+    const clearExercise = () => {
+        setTitle("")
+        setReps("")
+        setSets("")
+        setWeight("")
+        setNotes("")
+    }
 
     const onExercise = async (e) => {
         e.preventDefault();
@@ -27,7 +24,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                 [...currentExercise, exercise]
             )
         })
-        onClose()
+        clearExercise()
     }
 
     const updateTitle = (e) => {

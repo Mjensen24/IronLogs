@@ -8,6 +8,14 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
     const [carbs, setCarbs] = useState("");
     const [water, setWater] = useState("");
 
+    const clearMeal = () => {
+        setTitle("")
+        setCalories("")
+        setFat("")
+        setCarbs("")
+        setWater("")
+    }
+
     const onMeal = async (e) => {
         e.preventDefault();
         const meal = await postMeal(userId, mealEntryId, title, calories, fat, carbs, water)
@@ -16,6 +24,7 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
                 [...currentMeals, meal]
             )
         })
+        clearMeal()
     }
 
     const updateTitle = (e) => {
