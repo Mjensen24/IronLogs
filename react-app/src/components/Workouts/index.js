@@ -29,6 +29,10 @@ const Workouts = ({ userId }) => {
 
     const { onClose } = useDisclosure()
 
+    const test = () => {
+        console.log("test")
+    }
+
     return (
         <>
             <div className="mainpage-container">
