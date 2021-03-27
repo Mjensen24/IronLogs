@@ -12,7 +12,7 @@ const HomePage = ({ userId }) => {
                     <div className="intro-links">
                         <div className="link-div">
                             <Link to="/sign-up">
-                                Sign Up
+                                Sign Up!
                             </Link>
                         </div>
                         <div className="link-div">
