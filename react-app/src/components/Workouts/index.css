@@ -37,14 +37,39 @@
 
 .excercise-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 15px;
+}
+
+.testtt {
+    color: #E9E9E9;
+}
+
+.excercise-container:hover .testtt {
+    transition: 1s;
+    color: #7B2C2C;
 }
 
 .exercise-data {
     display: flex;
     flex-direction: row;
+    width: 500px;
     margin-bottom: 6px;
+}
+
+.exercise-data_total {
+    display: flex;
+    flex-direction: column;
+}
+
+.exercise-data_top {
+    display: flex;
+    flex-direction: row;
+}
+
+.exercise-data_bottom {
+    display: flex;
+    flex-direction: row;
 }
 
 .exercise-data p {

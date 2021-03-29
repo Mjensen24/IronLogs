@@ -27,11 +27,8 @@ const Workouts = ({ userId }) => {
         fetchData();
     }, [userId]);
 
-    const { onClose } = useDisclosure()
 
-    const test = () => {
-        console.log("test")
-    }
+    const { onClose } = useDisclosure()
 
     return (
         <>
@@ -56,13 +53,21 @@ const Workouts = ({ userId }) => {
                                                     return (
                                                         <div key={exercise.id} className="excercise-container">
                                                             <div className="exercise-data">
-                                                                <p>Exercise: {exercise.title}</p>
-                                                                <p>Weight: {exercise.weight}</p>
-                                                                <p>Reps: {exercise.reps}</p>
-                                                                <p>Sets: {exercise.sets}</p>
+                                                                <div className="exercise-data_total">
+                                                                    <div className="exercise-data_top">
+                                                                        <p>Exercise: {exercise.title}</p>
+                                                                        <p>Weight: {exercise.weight}</p>
+                                                                        <p>Reps: {exercise.reps}</p>
+                                                                        <p>Sets: {exercise.sets}</p>
+                                                                    </div>
+                                                                    <div className="exercise-data_bottom">
+                                                                        <p>Notes: {exercise.notes}</p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <p>Notes: {exercise.notes}</p>
-                                                            {/* <button>test</button> */}
+                                                            <div className="exercise_delete-button">
+                                                                <p className="testtt">delete</p>
+                                                            </div>
                                                         </div>
                                                     )
                                                 }
