@@ -54,9 +54,10 @@ def exerciseForm():
     db.session.commit()
     return exercise.to_dict()
 
-@workout_routes.route('/exercise', methods=['DELETE'])
+@workout_routes.route('/deleteexercise', methods=['DELETE'])
 @login_required
 def exerciseDelete(id):
     exercise = Exercise.query.get(id)
-    db.session.delete(exercise)
-    db.session.commit()
+    print('THIS IS HEEEEREEE',exercise)
+    # db.session.delete(exercise)
+    # db.session.commit()
