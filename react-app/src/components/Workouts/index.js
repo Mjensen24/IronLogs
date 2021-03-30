@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDisclosure, Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
 import "./index.css"
+import { TiDeleteOutline } from 'react-icons/ti';
 import ExerciseForm from "../auth/ExerciseForm";
 import WorkoutDrawer from "../WorkoutDrawer";
 
@@ -55,18 +56,18 @@ const Workouts = ({ userId }) => {
                                                             <div className="exercise-data">
                                                                 <div className="exercise-data_total">
                                                                     <div className="exercise-data_top">
-                                                                        <p>Exercise: {exercise.title}</p>
-                                                                        <p>Weight: {exercise.weight}</p>
-                                                                        <p>Reps: {exercise.reps}</p>
-                                                                        <p>Sets: {exercise.sets}</p>
+                                                                        <p>EXERCISE: {exercise.title}</p>
+                                                                        <p>WEIGHT: {exercise.weight}</p>
+                                                                        <p>REPS: {exercise.reps}</p>
+                                                                        <p>SETS: {exercise.sets}</p>
                                                                     </div>
                                                                     <div className="exercise-data_bottom">
-                                                                        <p>Notes: {exercise.notes}</p>
+                                                                        <p>NOTES: {exercise.notes}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className="exercise_delete-button">
-                                                                <p className="testtt">delete</p>
+                                                                <p><TiDeleteOutline /></p>
                                                             </div>
                                                         </div>
                                                     )

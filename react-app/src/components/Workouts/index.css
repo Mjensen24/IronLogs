@@ -37,15 +37,26 @@
 
 .excercise-container {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     margin-bottom: 15px;
 }
 
-.testtt {
+.exercise_delete-button > p {
     color: #E9E9E9;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+
 }
 
-.excercise-container:hover .testtt {
+.exercise_delete-button > p > svg {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.excercise-container:hover .exercise_delete-button > p {
     transition: 1s;
     color: #7B2C2C;
 }
@@ -53,7 +64,7 @@
 .exercise-data {
     display: flex;
     flex-direction: row;
-    width: 500px;
+    /* width: 90%; */
     margin-bottom: 6px;
 }
 
@@ -65,6 +76,7 @@
 .exercise-data_top {
     display: flex;
     flex-direction: row;
+    /* width: 100%; */
 }
 
 .exercise-data_bottom {
