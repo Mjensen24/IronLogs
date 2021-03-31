@@ -67,8 +67,18 @@
     color: rgb(117, 117, 117);
 }
 
+.profile:hover {
+    color: gold;
+    transition: 0.2s;
+}
+
+.linkedin:hover {
+    color: #0A66C2;
+    transition: 0.2s;
+}
+
 .mail:hover {
-    color: red;
+    color: rgba(255, 0, 0, 0.767);
     transition: 0.2s;
 }
 
