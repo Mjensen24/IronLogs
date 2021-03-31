@@ -42,6 +42,8 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
     <div className="signup-container">
       <img src="https://ironlogs.s3.amazonaws.com/gympeople.jpg" alt="plant"></img>
       <div className="signup-form_container">
+      </div>
+      <div className="cooltest">
         <h1>Iron Logs</h1>
         <form className="signup-form" onSubmit={onSignUp}>
           <input

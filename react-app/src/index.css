@@ -289,6 +289,16 @@ align-items: center;
     height: 100%;
 }
 
+.cooltest {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    width: 350px;
+    border-radius: 5px;
+}
+
 .signup-form_container {
     display: flex;
     position: absolute;
@@ -297,10 +307,11 @@ align-items: center;
     height: 400px;
     width: 350px;
     border-radius: 5px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
 }
 
-.signup-form_container > h1 {
+.cooltest > h1 {
     font-size: 40px;
     margin-bottom: 25px;
 }
@@ -318,5 +329,4 @@ align-items: center;
     border-radius: 3px;
     margin-bottom: 5px;
     background-color: rebeccapurple;
-    opacity: 0.5;
 }
