@@ -382,3 +382,8 @@ align-items: center;
 .signup-footer a {
     margin-left: 5px;
 }
+
+.signup-footer a:hover {
+    color: lightgrey;
+    transition: 0.3s;
+}
