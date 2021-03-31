@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { Redirect } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { signUp } from '../../services/auth';
 
 const SignUpForm = ({ authenticated, setAuthenticated }) => {
@@ -43,8 +43,9 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
       <img src="https://ironlogs.s3.amazonaws.com/gympeople.jpg" alt="plant"></img>
       <div className="signup-form_container">
       </div>
-      <div className="cooltest">
-        <h1>Iron Logs</h1>
+      <div className="solid-form">
+        <img src="https://ironlogs.s3.amazonaws.com/Ironlogss.png" alt="IronLogs Logo"></img>
+        {/* <h1>Create your free account</h1> */}
         <form className="signup-form" onSubmit={onSignUp}>
           <input
             placeholder="User Name"
@@ -77,6 +78,12 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
           ></input>
           <button type="submit">Sign Up</button>
         </form>
+        <div className="signup-footer">
+          <p>Already have an account?</p>
+          <Link to="/login">
+            Login
+          </Link>
+        </div>
       </div>
     </div>
   );
