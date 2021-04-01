@@ -86,3 +86,9 @@
     color: rgb(0, 255, 13);
     transition: 0.2s;
 }
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
