@@ -68,22 +68,22 @@
 }
 
 .profile:hover {
-    color: gold;
+    color: #008080;
     transition: 0.2s;
 }
 
 .linkedin:hover {
-    color: #0A66C2;
+    color: #008080;
     transition: 0.2s;
 }
 
 .mail:hover {
-    color: rgba(255, 0, 0, 0.767);
+    color: #008080;
     transition: 0.2s;
 }
 
 .github:hover {
-    color: rgb(0, 255, 13);
+    color: #008080;
     transition: 0.2s;
 }
 
