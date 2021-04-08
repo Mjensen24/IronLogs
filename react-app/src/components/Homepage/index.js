@@ -30,7 +30,7 @@ const HomePage = ({ userId }) => {
                 <img className="intro-img" src="https://ironlogs.s3.amazonaws.com/workout.gif" alt="workout-gif"></img>
             </div>
             <div className="homepage-layer2">
-                <img src="/images/shoes2.png" alt="workout-gif"></img>
+                <img src="https://ironlogs.s3.amazonaws.com/shoes2.png" alt="workout-gif"></img>
                 <div className="description">
                     <h1>Start Counting on Genuine Results</h1>
                     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -41,7 +41,7 @@ const HomePage = ({ userId }) => {
             </div>
             <div className="homepage-layer3">
                 <div className="features">
-                    <img src="/images/couple.png" alt="workout-gif"></img>
+                    <img src="https://ironlogs.s3.amazonaws.com/couple.png" alt="workout-gif"></img>
                     {/* <img src="https://ironlogs.s3.amazonaws.com/geometric.jpg" alt="workout-gif"></img> */}
                     <div className="features-info">
                         <h1>Introduce a New Lifestyle</h1>
