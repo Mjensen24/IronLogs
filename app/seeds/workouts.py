@@ -18,6 +18,18 @@ def seed_workouts():
     demo5 = Workout(userId="1", title="Back Day")
     db.session.add(demo5)
 
+    demo6 = Workout(userId="1", title="Cardio")
+    db.session.add(demo6)
+
+    demo7 = Workout(userId="1", title="Chest")
+    db.session.add(demo7)
+
+    demo8 = Workout(userId="1", title="Back")
+    db.session.add(demo8)
+
+    demo9 = Workout(userId="1", title="Legs")
+    db.session.add(demo9)
+
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.

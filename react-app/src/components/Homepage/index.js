@@ -33,9 +33,11 @@ const HomePage = ({ userId }) => {
                 <img src="https://ironlogs.s3.amazonaws.com/shoes2.png" alt="workout-gif"></img>
                 <div className="description">
                     <h1>Start Counting on Genuine Results</h1>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
+                    <p>
+                        Sometimes It's not easy keeping track of the habits that matter most to us. Iron Logs uses a simple platform to
+                        store and display all of you fitness records. Once you've signed up, you can create daily workout entries with customized exercises,
+                        keep track of your calorie intake with Iron Logs meal tracker, and more!
+                    </p>
                 </div>
                 <div className="description-background"></div>
             </div>

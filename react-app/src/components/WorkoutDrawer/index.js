@@ -27,7 +27,9 @@ function WorkoutDrawer({ setWorkouts, userId }) {
 
                         <DrawerBody>
                             <WorkoutForm onClose={onClose} setWorkouts={setWorkouts} userId={userId} />
+                            <div className="workout-drawer_description">
 
+                            </div>
                         </DrawerBody>
 
                         <DrawerFooter>
