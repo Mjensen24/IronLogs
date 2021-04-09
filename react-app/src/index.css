@@ -205,6 +205,19 @@
     transition: .3s;
 }
 
+.textarea {
+    border: 2px solid #008080;
+    width: 270px;
+    height: 350px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.textarea:hover {
+    border: 2px solid #109e9e;
+    transition: .3s;
+}
+
 .chakra-modal__body {
     display: flex;
     flex-direction: column;

@@ -54,10 +54,11 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
             </div>
             <div>
                 <label className="workout-form_input" htmlFor="notes"></label>
-                <input
+                <textarea
+                    className="textarea"
                     name="notes"
                     type="text"
-                    placeholder="notes"
+                    placeholder="Diary Entry"
                     value={notes}
                     onChange={updateNotes}
                 />

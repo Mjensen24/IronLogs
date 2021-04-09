@@ -23,7 +23,7 @@ function DiaryDrawer({ setEntries, userId }) {
                 <DrawerOverlay>
                     <DrawerContent>
                         <DrawerCloseButton />
-                        <DrawerHeader>Create your Daiary Entry</DrawerHeader>
+                        <DrawerHeader>Create your Diary Entry</DrawerHeader>
 
                         <DrawerBody>
                             <DiaryForm onClose={onClose} setEntries={setEntries} userId={userId} />
