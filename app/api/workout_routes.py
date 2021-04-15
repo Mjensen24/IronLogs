@@ -54,10 +54,11 @@ def exerciseForm():
     db.session.commit()
     return exercise.to_dict()
 
-@workout_routes.route('/deleteexercise', methods=['DELETE'])
+@workout_routes.route('/deleteexercise/<int:id>', methods=['DELETE'])
 @login_required
 def exerciseDelete(id):
+    print('HELLLLLLLLLLOOOOOOOOOOOOOOO')
     exercise = Exercise.query.get(id)
-    print('THIS IS HEEEEREEE',exercise)
-    # db.session.delete(exercise)
-    # db.session.commit()
+    db.session.delete(exercise)
+    db.session.commit()
+    return redirect("/")

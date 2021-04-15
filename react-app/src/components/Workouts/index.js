@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDisclosure, Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
 import "./index.css"
-import { TiDeleteOutline } from 'react-icons/ti';
 import ExerciseForm from "../auth/ExerciseForm";
 import WorkoutDrawer from "../WorkoutDrawer";
+import ExercisesList from "./Exercises/exercises";
 
 
 const Workouts = ({ userId }) => {
@@ -49,33 +49,7 @@ const Workouts = ({ userId }) => {
                                             <AccordionIcon />
                                         </AccordionButton>
                                         <AccordionPanel className="individual-workout_data" pb={4}>
-                                            {exercises.map((exercise) => {
-                                                if (exercise.workoutId === workout.id) {
-                                                    return (
-                                                        <div key={exercise.id} className="excercise-container">
-                                                            <div className="exercise-data">
-                                                                <div className="exercise-data_total">
-                                                                    <div className="exercise-data_top">
-                                                                        <p>EXERCISE: {exercise.title}</p>
-                                                                        <p>WEIGHT: {exercise.weight}</p>
-                                                                        <p>REPS: {exercise.reps}</p>
-                                                                        <p>SETS: {exercise.sets}</p>
-                                                                    </div>
-                                                                    <div className="exercise-data_bottom">
-                                                                        <p>NOTES: {exercise.notes}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="exercise_delete-button">
-                                                                <p><TiDeleteOutline /></p>
-                                                            </div>
-                                                        </div>
-                                                    )
-                                                }
-                                                return (
-                                                    null
-                                                )
-                                            })}
+                                            <ExercisesList setExercises={setExercises} exercises={exercises} workout={workout} userId={userId} />
                                             <Accordion allowMultiple>
                                                 <AccordionItem>
                                                     <AccordionButton _expanded={{ bg: "teal", color: "white" }}>

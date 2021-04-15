@@ -86,21 +86,12 @@ export const postExercise = async (userId, workoutId, title, reps, sets, weight,
   return await response.json();
 }
 
-export const deleteExercise = async (userId, workoutId, title, reps, sets, weight, notes) => {
-  const response = await fetch("/api/workouts/deleteexercise", {
+export const deleteExercise = async (exerciseId) => {
+  const response = await fetch(`/api/workouts/deleteexercise/${exerciseId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      userId,
-      workoutId,
-      title,
-      reps,
-      sets,
-      weight,
-      notes,
-    }),
+    }
   });
   return await response.json();
 }
