@@ -61,4 +61,4 @@ def exerciseDelete(id):
     exercise = Exercise.query.get(id)
     db.session.delete(exercise)
     db.session.commit()
-    return redirect("/")
+    return exercise.to_dict()

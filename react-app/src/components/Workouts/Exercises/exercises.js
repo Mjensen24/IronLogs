@@ -14,12 +14,12 @@ import IndividualExercise from "./Exercise";
 //     onClose()
 // }
 
-const ExercisesList = ({ exercises, workout, setExercises }) => {
+const ExercisesList = ({ setExercises, exercises, workout, userId }) => {
     return (
         exercises.map((exercise) => {
             if (exercise.workoutId === workout.id) {
                 return (
-                    <IndividualExercise setExercises={setExercises} key={`${exercise.id}`} exercise={exercise} />
+                    <IndividualExercise setExercises={setExercises} userId={userId} key={`${exercise.id}`} exercise={exercise} exercises={exercises} />
                 )
             }
             return (

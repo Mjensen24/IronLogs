@@ -26,7 +26,7 @@ const Workouts = ({ userId }) => {
             setExercises(responseData.exercises);
         }
         fetchData();
-    }, [userId]);
+    }, [exercises, userId]);
 
 
     const { onClose } = useDisclosure()

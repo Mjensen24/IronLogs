@@ -1,14 +1,20 @@
 import React from "react";
 import { deleteExercise } from "../../../../services/auth";
 import { TiDeleteOutline } from 'react-icons/ti';
+import { Link } from "react-router-dom";
 
-
-const IndividualExercise = ({ exercise, setExercises }) => {
+const IndividualExercise = ({ setExercises, exercise, exercises, userId }) => {
 
     const onDeleteEx = async (e) => {
         e.preventDefault();
-        const deletedExcercise = await deleteExercise(exercise.id);
-        return deletedExcercise;
+        await deleteExercise(exercise.id);
+        setExercises((currentExercises) => {
+            // const exercise = [currentExercises.splice([...currentExercises].indexOf(deleted), currentExercises.length)]
+            return (
+                [...currentExercises]
+                // [[...currentExercises].splice([...currentExercises].indexOf(deleted), 1)]
+            )
+        })
     }
 
 
@@ -28,7 +34,11 @@ const IndividualExercise = ({ exercise, setExercises }) => {
                 </div>
             </div>
             <div className="exercise_delete-button">
-                <p onClick={onDeleteEx}><TiDeleteOutline /></p>
+                <p onClick={onDeleteEx}>
+                    <TiDeleteOutline>
+                        <Link to={`/workouts/${userId}`} />
+                    </TiDeleteOutline></p>
+
             </div>
         </div>
     )
