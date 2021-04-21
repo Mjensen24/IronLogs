@@ -24,3 +24,13 @@
 .entry-data {
     background-color: rgb(233, 233, 233);
 }
+
+.diary-delete {
+    margin-right: 10px;
+    color: #F5F5F5;
+}
+
+.diary-delete svg {
+    height: 35px;
+    width: 35px;
+}

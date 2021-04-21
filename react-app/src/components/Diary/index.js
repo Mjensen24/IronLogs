@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
 import "./index.css"
 import DiaryDrawer from '../DiaryDrawer';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 const Diary = ({ userId }) => {
     const [entries, setEntries] = useState([]);
@@ -31,6 +32,9 @@ const Diary = ({ userId }) => {
                                                     <p>{entry.date}</p>
                                                     <p>{entry.title}</p>
                                                 </Box>
+                                                <div className="diary-delete">
+                                                    <TiDeleteOutline />
+                                                </div>
                                                 <AccordionIcon />
                                             </AccordionButton>
                                         </h2>
