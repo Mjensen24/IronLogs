@@ -112,6 +112,16 @@ export const postEntry = async (userId, title, notes, date) => {
   return await response.json();
 }
 
+export const deleteEntry = async (diaryId) => {
+  const response = await fetch(`/api/diaryentries/deletediary/${diaryId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+  return await response.json();
+}
+
 export const postMealEntry = async (userId, title, date) => {
   const response = await fetch("/api/foodtracker/createfoodentry", {
     method: "POST",

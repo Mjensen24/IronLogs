@@ -23,3 +23,11 @@ def entryForm():
     db.session.add(entry)
     db.session.commit()
     return entry.to_dict()
+
+@diaryentry_routes.route('/deletediary/<int:id>', methods=['DELETE'])
+@login_required
+def diaryDelete(id):
+    diary = DiaryEntry.query.get(id)
+    db.session.delete(diary)
+    db.session.commit()
+    return diary.to_dict()

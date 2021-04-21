@@ -21,6 +21,7 @@ const Diary = ({ userId }) => {
             <div className="mainpage-container">
                 <h1>Diary</h1>
                 <div className="entries_container">
+
                     {entries.map((entry) => {
                         return (
                             <div key={entry.id}>

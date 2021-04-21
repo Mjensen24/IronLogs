@@ -57,7 +57,6 @@ def exerciseForm():
 @workout_routes.route('/deleteexercise/<int:id>', methods=['DELETE'])
 @login_required
 def exerciseDelete(id):
-    print('HELLLLLLLLLLOOOOOOOOOOOOOOO')
     exercise = Exercise.query.get(id)
     db.session.delete(exercise)
     db.session.commit()
