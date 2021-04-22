@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
 import "./index.css"
 import DiaryDrawer from '../DiaryDrawer';
-import { TiDeleteOutline } from 'react-icons/ti';
+
+import SoloEntry from './soloEntry/soloEntry';
 
 const Diary = ({ userId }) => {
     const [entries, setEntries] = useState([]);
@@ -24,27 +24,7 @@ const Diary = ({ userId }) => {
 
                     {entries.map((entry) => {
                         return (
-                            <div key={entry.id}>
-                                <Accordion allowToggle>
-                                    <AccordionItem className="entry">
-                                        <h2>
-                                            <AccordionButton className="entries_header" _expanded={{ bg: "teal", color: "white" }}>
-                                                <Box flex="1" textAlign="left">
-                                                    <p>{entry.date}</p>
-                                                    <p>{entry.title}</p>
-                                                </Box>
-                                                <div className="diary-delete">
-                                                    <TiDeleteOutline />
-                                                </div>
-                                                <AccordionIcon />
-                                            </AccordionButton>
-                                        </h2>
-                                        <AccordionPanel className="entry-data" pb={4}>
-                                            <p>{entry.notes}</p>
-                                        </AccordionPanel>
-                                    </AccordionItem>
-                                </Accordion>
-                            </div>
+                            <SoloEntry entry={entry} />
                         )
                     })}
                 </div>
