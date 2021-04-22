@@ -1,8 +1,20 @@
 import React from 'react';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
+import { deleteEntry } from "../../../services/auth"
 
-const SoloEntry = ({ entry }) => {
+const SoloEntry = ({ setEntries, entry }) => {
+
+    const deleteDiary = async (e) => {
+        e.preventDefault();
+        await deleteEntry(entry.id);
+        setEntries((currentEntries) => {
+            return (
+                [...currentEntries]
+            )
+        })
+    }
+
     return (
         <div key={entry.id}>
             <Accordion allowToggle>
@@ -14,7 +26,7 @@ const SoloEntry = ({ entry }) => {
                                 <p>{entry.title}</p>
                             </Box>
                             <div className="diary-delete">
-                                <TiDeleteOutline />
+                                <TiDeleteOutline onClick={deleteDiary} />
                             </div>
                             <AccordionIcon />
                         </AccordionButton>

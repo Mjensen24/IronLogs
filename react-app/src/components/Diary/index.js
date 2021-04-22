@@ -14,7 +14,7 @@ const Diary = ({ userId }) => {
             setEntries(responseData.entries);
         }
         fetchData();
-    }, [userId]);
+    }, [userId, entries]);
 
     return (
         <>
@@ -24,7 +24,7 @@ const Diary = ({ userId }) => {
 
                     {entries.map((entry) => {
                         return (
-                            <SoloEntry entry={entry} />
+                            <SoloEntry key={entry.id} setEntries={setEntries} entry={entry} />
                         )
                     })}
                 </div>
