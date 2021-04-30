@@ -3,7 +3,7 @@ import { deleteExercise } from "../../../../services/auth";
 import { TiDeleteOutline } from 'react-icons/ti';
 import { Link } from "react-router-dom";
 
-const IndividualExercise = ({ setExercises, exercise, exercises, userId }) => {
+const IndividualExercise = ({ setExercises, exercise, userId }) => {
 
     const onDeleteEx = async (e) => {
         e.preventDefault();
@@ -17,6 +17,7 @@ const IndividualExercise = ({ setExercises, exercise, exercises, userId }) => {
         })
     }
 
+    // console.log(exercise)
 
     return (
         <div key={exercise.id} className="excercise-container">

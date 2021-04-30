@@ -2,6 +2,7 @@ import React from "react";
 import IndividualExercise from "./Exercise";
 
 const ExercisesList = ({ setExercises, exercises, workout, userId }) => {
+
     return (
         exercises.map((exercise) => {
             if (exercise.workoutId === workout.id) {

@@ -61,3 +61,12 @@ def exerciseDelete(id):
     db.session.delete(exercise)
     db.session.commit()
     return exercise.to_dict()
+
+@workout_routes.route('/deleteworkout/<int:id>', methods=['DELETE'])
+@login_required
+def workoutDelete(id):
+    workout = Workout.query.get(id)
+    exercise = Exercise.query.get(workoutId(id))
+    db.session.delete(workout)
+    db.session.delete(exercise)
+    return workout.to_dict()

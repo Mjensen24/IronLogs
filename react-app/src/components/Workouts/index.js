@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useDisclosure, Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
+import { useDisclosure } from "@chakra-ui/react"
 import "./index.css"
-import ExerciseForm from "../auth/ExerciseForm";
+// import ExerciseForm from "../auth/ExerciseForm";
 import WorkoutDrawer from "../WorkoutDrawer";
-import ExercisesList from "./Exercises/exercises";
+// import ExercisesList from "./Exercises/exercises";
+import SoloWorkout from "./Exercises/Workout";
 
 
 const Workouts = ({ userId }) => {
@@ -19,15 +20,6 @@ const Workouts = ({ userId }) => {
         fetchData();
     }, [userId]);
 
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch(`/api/workouts/exercises/${userId}`);
-            const responseData = await response.json();
-            setExercises(responseData.exercises);
-        }
-        fetchData();
-    }, [exercises, userId]);
-
 
     const { onClose } = useDisclosure()
 
@@ -38,35 +30,7 @@ const Workouts = ({ userId }) => {
                 <div className="workouts_container">
                     {workouts.map((workout) => {
                         return (
-                            <div key={workout.id}>
-                                <Accordion allowToggle>
-                                    <AccordionItem className="individual-workout_container">
-                                        <AccordionButton _expanded={{ bg: "teal", color: "white" }} className="individual-workout_header">
-                                            <Box flex="1" textAlign="left">
-                                                <p>{workout.date}</p>
-                                                <p>{workout.title}</p>
-                                            </Box>
-                                            <AccordionIcon />
-                                        </AccordionButton>
-                                        <AccordionPanel className="individual-workout_data" pb={4}>
-                                            <ExercisesList setExercises={setExercises} exercises={exercises} workout={workout} userId={userId} />
-                                            <Accordion allowMultiple>
-                                                <AccordionItem>
-                                                    <AccordionButton _expanded={{ bg: "teal", color: "white" }}>
-                                                        <Box flex="1" textAlign="left">
-                                                            Add Exercise
-                                                        </Box>
-                                                        <AccordionIcon />
-                                                    </AccordionButton>
-                                                    <AccordionPanel pb={4}>
-                                                        <ExerciseForm onClose={onClose} setExercises={setExercises} workoutId={workout.id} userId={userId} />
-                                                    </AccordionPanel>
-                                                </AccordionItem>
-                                            </Accordion>
-                                        </AccordionPanel>
-                                    </AccordionItem>
-                                </Accordion>
-                            </div>
+                            <SoloWorkout key={workout.id} workout={workout} setExercises={setExercises} onClose={onClose} userId={userId} exercises={exercises} />
                         )
                     })}
                 </div>
