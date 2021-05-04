@@ -3,11 +3,9 @@ import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, Accordi
 import ExerciseForm from "../../../auth/ExerciseForm";
 import ExercisesList from "../exercises";
 import { TiDeleteOutline } from 'react-icons/ti';
+import { deleteWorkout } from "../../../../services/auth"
 
-
-
-
-const SoloWorkout = ({ workout, onClose, userId }) => {
+const SoloWorkout = ({ setWorkouts, workout, onClose, userId }) => {
 
     const [exercises, setExercises] = useState([]);
 
@@ -20,6 +18,18 @@ const SoloWorkout = ({ workout, onClose, userId }) => {
         fetchData();
     }, [exercises, userId]);
 
+    const onDeleteWorkout = async (e) => {
+        e.preventDefault();
+        await deleteWorkout(workout.id);
+        setWorkouts((currentWorkouts) => {
+            // const exercise = [currentExercises.splice([...currentExercises].indexOf(deleted), currentExercises.length)]
+            return (
+                [...currentWorkouts]
+                // [[...currentExercises].splice([...currentExercises].indexOf(deleted), 1)]
+            )
+        })
+    }
+
     return (
         <div key={workout.id}>
             <Accordion allowToggle>
@@ -30,7 +40,7 @@ const SoloWorkout = ({ workout, onClose, userId }) => {
                             <p>{workout.title}</p>
                         </Box>
                         <div className="diary-delete">
-                            <TiDeleteOutline />
+                            <TiDeleteOutline onClick={onDeleteWorkout} />
                         </div>
                         <AccordionIcon />
                     </AccordionButton>

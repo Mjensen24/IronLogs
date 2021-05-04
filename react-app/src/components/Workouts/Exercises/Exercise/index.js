@@ -17,8 +17,6 @@ const IndividualExercise = ({ setExercises, exercise, userId }) => {
         })
     }
 
-    // console.log(exercise)
-
     return (
         <div key={exercise.id} className="excercise-container">
             <div className="exercise-data">

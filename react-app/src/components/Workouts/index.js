@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDisclosure } from "@chakra-ui/react"
 import "./index.css"
-// import ExerciseForm from "../auth/ExerciseForm";
 import WorkoutDrawer from "../WorkoutDrawer";
-// import ExercisesList from "./Exercises/exercises";
 import SoloWorkout from "./Exercises/Workout";
 
 
@@ -30,7 +28,7 @@ const Workouts = ({ userId }) => {
                 <div className="workouts_container">
                     {workouts.map((workout) => {
                         return (
-                            <SoloWorkout key={workout.id} workout={workout} setExercises={setExercises} onClose={onClose} userId={userId} exercises={exercises} />
+                            <SoloWorkout key={workout.id} setWorkouts={setWorkouts} workout={workout} setExercises={setExercises} onClose={onClose} userId={userId} exercises={exercises} />
                         )
                     })}
                 </div>

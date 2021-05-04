@@ -66,7 +66,8 @@ def exerciseDelete(id):
 @login_required
 def workoutDelete(id):
     workout = Workout.query.get(id)
-    exercise = Exercise.query.get(workoutId(id))
+    # exercises = Exercise.query.filter(Exercise.workoutId==id).all()
+    # db.session.delete(exercises)
     db.session.delete(workout)
-    db.session.delete(exercise)
+    db.session.commit()
     return workout.to_dict()
