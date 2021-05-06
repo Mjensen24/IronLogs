@@ -58,7 +58,7 @@
 
 .excercise-container:hover .exercise_delete-button > p {
     transition: 1s;
-    color: #7B2C2C;
+    color: #ce4242;
 }
 
 .exercise-data {
@@ -147,4 +147,14 @@
 
 .form-notes  input {
     width: 90%;
+}
+
+.workout-delete {
+    margin-right: 10px;
+    color: #F5F5F5;
+}
+
+.workout-delete div {
+    height: 35px;
+    width: 35px;
 }

@@ -39,8 +39,8 @@ const SoloWorkout = ({ setWorkouts, workout, onClose, userId }) => {
                             <p>{workout.date}</p>
                             <p>{workout.title}</p>
                         </Box>
-                        <div className="diary-delete">
-                            <TiDeleteOutline onClick={onDeleteWorkout} />
+                        <div className="workout-delete">
+                            <div onClick={onDeleteWorkout} />
                         </div>
                         <AccordionIcon />
                     </AccordionButton>
