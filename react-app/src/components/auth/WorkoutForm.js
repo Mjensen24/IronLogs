@@ -41,7 +41,7 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
                 <input
                     name="title"
                     type="text"
-                    placeholder="Title"
+                    placeholder="Workout Title"
                     value={title}
                     onChange={updateTitle}
                 />

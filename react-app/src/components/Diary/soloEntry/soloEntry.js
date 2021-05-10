@@ -22,8 +22,8 @@ const SoloEntry = ({ setEntries, entry }) => {
                     <h2>
                         <AccordionButton className="entries_header" _expanded={{ bg: "teal", color: "white" }}>
                             <Box flex="1" textAlign="left">
-                                <p>{entry.date}</p>
                                 <p>{entry.title}</p>
+                                <p>{entry.date}</p>
                             </Box>
                             <div className="diary-delete">
                                 <TiDeleteOutline onClick={deleteDiary} />

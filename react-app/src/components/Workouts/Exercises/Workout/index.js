@@ -36,8 +36,8 @@ const SoloWorkout = ({ setWorkouts, workout, onClose, userId }) => {
                 <AccordionItem className="individual-workout_container">
                     <AccordionButton _expanded={{ bg: "teal", color: "white" }} className="individual-workout_header">
                         <Box flex="1" textAlign="left">
-                            <p>{workout.date}</p>
                             <p>{workout.title}</p>
+                            <p>{workout.date}</p>
                         </Box>
                         <div className="workout-delete">
                             <div onClick={onDeleteWorkout} />

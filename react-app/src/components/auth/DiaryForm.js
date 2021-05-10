@@ -37,7 +37,7 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                 <input
                     name="title"
                     type="text"
-                    placeholder="Title"
+                    placeholder="Entry Title"
                     value={title}
                     onChange={updateTitle}
                 />
@@ -58,7 +58,7 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                     className="textarea"
                     name="notes"
                     type="text"
-                    placeholder="Diary Entry"
+                    placeholder="Fill your Diary with notes from your workout, about your diet, or even just how you're feeling that day!"
                     value={notes}
                     onChange={updateNotes}
                 />

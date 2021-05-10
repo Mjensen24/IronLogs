@@ -3,6 +3,7 @@ import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, Accordi
 import MealForm from '../../auth/MealForm';
 import MealList from '../Meal/mealList';
 import { deleteMealEntry } from '../../../services/auth';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 const SoloMealEntry = ({ entry, meals, setMeals, userId, setMealEntries }) => {
 
@@ -25,8 +26,11 @@ const SoloMealEntry = ({ entry, meals, setMeals, userId, setMealEntries }) => {
                     <h2>
                         <AccordionButton _expanded={{ bg: "teal", color: "white" }}>
                             <Box flex="1" textAlign="left">
-                                <p>{entry.date}</p>
                                 <p>{entry.title}</p>
+                                <div className="mealEntry-right">
+                                    <p>{entry.date}</p>
+                                    <div onClick={onDeleteMealEntry}></div>
+                                </div>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -48,7 +52,6 @@ const SoloMealEntry = ({ entry, meals, setMeals, userId, setMealEntries }) => {
                                 </AccordionPanel>
                             </AccordionItem>
                         </Accordion>
-                        <h1>hi</h1>
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>

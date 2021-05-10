@@ -47,3 +47,20 @@
     height: 27px;
     width: 27px;
 }
+.css-1eziwv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 30px; */
+}
+
+.mealEntry-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mealEntry-right > div {
+    width: 40px;
+    height: 40px;
+}

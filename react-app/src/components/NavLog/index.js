@@ -29,13 +29,13 @@ const NavLog = ({ userId }) => {
                             </NavLink>
                         </li>
                     </div>
-                    <div>
+                    {/* <div>
                         <li className="navlog-li">
                             <NavLink to="/" exact={true} activeClassName="navlog-active">
                                 Home
                             </NavLink>
                         </li>
-                    </div>
+                    </div> */}
                 </ul>
             </nav>
         </div>
