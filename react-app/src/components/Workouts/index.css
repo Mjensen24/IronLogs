@@ -58,7 +58,7 @@
 
 .excercise-container:hover .exercise_delete-button > p {
     transition: 1s;
-    color: #ce4242;
+    color: rgb(26, 26, 26);
 }
 
 .exercise-data {

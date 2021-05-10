@@ -23,6 +23,13 @@
 .meal-data{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.meal-data:hover .meal-delete_button > svg{
+    color: rgb(26, 26, 26);
+    transition: 0.2s;
 }
 
 .meal-data_entry {
@@ -32,4 +39,11 @@
 
 .total-meals {
     background-color: #E9E9E9;
+}
+
+.meal-delete_button > svg{
+    color: #E9E9E9;
+    margin-left: 13px;
+    height: 27px;
+    width: 27px;
 }

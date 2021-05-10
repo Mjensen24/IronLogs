@@ -53,3 +53,19 @@ def mealForm():
     db.session.add(meal)
     db.session.commit()
     return meal.to_dict()
+
+@foodtracker_routes.route('deletemeal/<int:id>', methods={'DELETE'})
+@login_required
+def deleteMeal(id):
+    meal = Meal.query.get(id)
+    db.session.delete(meal)
+    db.session.commit()
+    return exercise.to_dict()
+
+@foodtracker_routes.route('deletemealentry/<int:id>', methods={'DELETE'})
+@login_required
+def deleteMealEntry(id):
+    mealEntry = MealEntry.query.get(id)
+    db.session.delete(mealEntry)
+    db.session.commit()
+    return exercise.to_dict()

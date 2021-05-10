@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, AccordionIcon } from "@chakra-ui/react"
 import ExerciseForm from "../../../auth/ExerciseForm";
 import ExercisesList from "../exercises";
-import { TiDeleteOutline } from 'react-icons/ti';
+// import { TiDeleteOutline } from 'react-icons/ti';
 import { deleteWorkout } from "../../../../services/auth"
 
 const SoloWorkout = ({ setWorkouts, workout, onClose, userId }) => {

@@ -132,6 +132,7 @@ export const deleteEntry = async (diaryId) => {
   return await response.json();
 }
 
+
 export const postMealEntry = async (userId, title, date) => {
   const response = await fetch("/api/foodtracker/createfoodentry", {
     method: "POST",
@@ -162,6 +163,26 @@ export const postMeal = async (userId, mealEntryId, title, calories, fat, carbs,
       carbs,
       water,
     }),
+  });
+  return await response.json();
+}
+
+export const deleteMeal = async (mealId) => {
+  const response = await fetch(`/api/foodtracker/deletemeal/${mealId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+  return await response.json();
+}
+
+export const deleteMealEntry = async (mealEntryId) => {
+  const response = await fetch(`/api/foodtracker/deletemealentry/${mealEntryId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    }
   });
   return await response.json();
 }
