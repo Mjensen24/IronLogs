@@ -35,6 +35,7 @@ const Workouts = ({ userId }) => {
             </div >
             <div className="post-button">
                 <WorkoutDrawer setWorkouts={setWorkouts} userId={userId} />
+                <h1>test</h1>
             </div>
         </>
     )
