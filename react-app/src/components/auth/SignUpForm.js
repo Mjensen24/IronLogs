@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { signUp } from '../../services/auth';
 
-const SignUpForm = ({ authenticated, setAuthenticated }) => {
+const SignUpForm = ({ userId, authenticated, setAuthenticated }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +17,11 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
       }
     }
   };
+
+  if (authenticated) {
+    return <Redirect to={`/workouts/${userId}`} />;
+    // need userid to redirect to workouts/userid (userid in navlink =undefined error)
+  }
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
