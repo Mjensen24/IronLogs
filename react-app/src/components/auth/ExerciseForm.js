@@ -57,6 +57,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="text"
                         placeholder="Title"
                         value={title}
+                        maxLength="20"
                         onChange={updateTitle}
                     />
                 </div>
@@ -67,6 +68,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="number"
                         placeholder="reps"
                         value={reps}
+                        maxLength="3"
                         onChange={updateReps}
                     />
                     <label htmlFor="sets"></label>
@@ -75,6 +77,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="number"
                         placeholder="sets"
                         value={sets}
+                        maxLength="2"
                         onChange={updateSets}
                     />
                     <label htmlFor="weight"></label>
@@ -83,6 +86,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="number"
                         placeholder="weight"
                         value={weight}
+                        maxLength="3"
                         onChange={updateWeight}
                     />
                 </div>
@@ -93,6 +97,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="textbox"
                         placeholder="notes"
                         value={notes}
+                        maxLength="160"
                         onChange={updateNotes}
                     />
                 </div>
