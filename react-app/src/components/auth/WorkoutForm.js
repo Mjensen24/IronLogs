@@ -37,7 +37,6 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
     return (
         <form className="workout-form" onSubmit={onWorkout}>
             <div>
-                <h1>hei</h1>
                 <label className="workout-form_input" htmlFor="title"></label>
                 <input
                     name="title"
