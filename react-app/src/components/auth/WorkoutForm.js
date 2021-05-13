@@ -43,6 +43,7 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
                     type="text"
                     placeholder="Workout Title"
                     value={title}
+                    maxLength="40"
                     onChange={updateTitle}
                 />
             </div>
@@ -53,6 +54,7 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
                     type="date"
                     placeholder="Date"
                     value={date}
+                    maxLength="11"
                     onChange={updateDate}
                 />
             </div>
