@@ -55,6 +55,7 @@ const WorkoutForm = ({ userId, setWorkouts, onClose }) => {
                     placeholder="Date"
                     value={date}
                     maxLength="11"
+                    max="11"
                     onChange={updateDate}
                 />
             </div>

@@ -39,6 +39,7 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                     type="text"
                     placeholder="Entry Title"
                     value={title}
+                    maxLength="35"
                     onChange={updateTitle}
                 />
             </div>
@@ -49,6 +50,8 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                     type="date"
                     placeholder="Date"
                     value={date}
+                    maxLength="11"
+                    max="11"
                     onChange={updateDate}
                 />
             </div>
@@ -60,6 +63,7 @@ const DiaryForm = ({ userId, setEntries, onClose }) => {
                     type="text"
                     placeholder="Fill your Diary with notes from your workout, about your diet, or even just how you're feeling that day!"
                     value={notes}
+                    maxLength="1150"
                     onChange={updateNotes}
                 />
             </div>
