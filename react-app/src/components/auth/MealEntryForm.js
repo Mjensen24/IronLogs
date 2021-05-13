@@ -33,6 +33,7 @@ const MealEntryForm = ({ userId, setMealEntries, onClose }) => {
                     type="text"
                     placeholder="Title"
                     value={title}
+                    maxLength="35"
                     onChange={updateTitle}
                 />
             </div>
@@ -43,6 +44,8 @@ const MealEntryForm = ({ userId, setMealEntries, onClose }) => {
                     type="date"
                     placeholder="Date"
                     value={date}
+                    maxLength="11"
+                    max="11"
                     onChange={updateDate}
                 />
             </div>

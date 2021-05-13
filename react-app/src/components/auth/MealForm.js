@@ -57,6 +57,7 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
                         type="text"
                         placeholder="Title"
                         value={title}
+                        maxLength="20"
                         onChange={updateTitle}
                     />
                 </div>

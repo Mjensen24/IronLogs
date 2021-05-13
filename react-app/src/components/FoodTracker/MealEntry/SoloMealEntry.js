@@ -3,7 +3,6 @@ import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, Accordi
 import MealForm from '../../auth/MealForm';
 import MealList from '../Meal/mealList';
 import { deleteMealEntry } from '../../../services/auth';
-import { TiDeleteOutline } from 'react-icons/ti';
 
 const SoloMealEntry = ({ entry, meals, setMeals, userId, setMealEntries }) => {
 
