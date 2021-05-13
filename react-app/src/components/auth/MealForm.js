@@ -57,7 +57,7 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
                         type="text"
                         placeholder="Title"
                         value={title}
-                        maxLength="20"
+                        maxLength="11"
                         onChange={updateTitle}
                     />
                 </div>
@@ -69,6 +69,7 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
                             type="number"
                             placeholder="calories"
                             value={calories}
+                            max="999"
                             onChange={updateCalories}
                         />
                         <label htmlFor="fat"></label>
@@ -77,6 +78,7 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
                             type="number"
                             placeholder="fat"
                             value={fat}
+                            max="999"
                             onChange={updateFat}
                         />
                     </div>
@@ -87,14 +89,16 @@ const MealForm = ({ userId, mealEntryId, setMeals }) => {
                             type="number"
                             placeholder="carbs"
                             value={carbs}
+                            max="999"
                             onChange={updateCarbs}
                         />
                         <label htmlFor="water"></label>
                         <input
                             name="water"
-                            type="text"
+                            type="number"
                             placeholder="water"
                             value={water}
+                            max="99"
                             onChange={updateWater}
                         />
                     </div>
