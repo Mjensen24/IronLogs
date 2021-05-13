@@ -77,7 +77,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="number"
                         placeholder="sets"
                         value={sets}
-                        maxLength="2"
+                        max="99"
                         onChange={updateSets}
                     />
                     <label htmlFor="weight"></label>
@@ -86,7 +86,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="number"
                         placeholder="weight"
                         value={weight}
-                        maxLength="3"
+                        max="1500"
                         onChange={updateWeight}
                     />
                 </div>
