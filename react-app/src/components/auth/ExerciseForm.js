@@ -97,7 +97,7 @@ const ExerciseForm = ({ userId, workoutId, setExercises, onClose }) => {
                         type="textbox"
                         placeholder="notes"
                         value={notes}
-                        maxLength="160"
+                        maxLength="64"
                         onChange={updateNotes}
                     />
                 </div>
